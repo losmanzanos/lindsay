@@ -351,7 +351,7 @@
   .approach-item p{margin:0;color:var(--ink-soft-inv);font-size:0.95rem;max-width:42ch;}
 
   /* -------------------- specialties -------------------- */
-  .tag-cloud{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2.4rem;}
+  .tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-top:2.4rem;}
   .tag-cloud span{
     font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-size:0.78rem;
     padding:0.55em 0.95em;border:1px solid var(--line);border-radius:2px;
@@ -935,11 +935,13 @@
       '',
       message
     ];
-    var mailto = 'mailto:lindsay@rosenpsych.com'
+    // PREVIEW BUILD: routed to Chad for review, not Lindsay. Change this address
+    // to lindsay@rosenpsych.com before this site actually goes live.
+    var mailto = 'mailto:dahc.reverse@gmail.com'
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(bodyLines.join('\n'));
     window.location.href = mailto;
-    status.textContent = 'Opening your email app to send this to Lindsay…';
+    status.textContent = 'Opening your email app to send this message…';
   });
 })();
 </script>

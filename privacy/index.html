@@ -351,7 +351,7 @@
   .approach-item p{margin:0;color:var(--ink-soft-inv);font-size:0.95rem;max-width:42ch;}
 
   /* -------------------- specialties -------------------- */
-  .tag-cloud{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2.4rem;}
+  .tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-top:2.4rem;}
   .tag-cloud span{
     font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-size:0.78rem;
     padding:0.55em 0.95em;border:1px solid var(--line);border-radius:2px;
@@ -405,6 +405,26 @@
   .form-actions{margin-top:0.2rem;}
   .form-status{font-size:0.85rem;color:var(--ink-soft);margin-top:0.2rem;min-height:1.2em;}
 
+  .final-cta-simple{
+    display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;
+  }
+
+  /* -------------------- faq -------------------- */
+  .faq-item{padding:1.7rem 0;border-bottom:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-item h3{font-size:1.15rem;font-weight:500;margin-bottom:0.5rem;}
+  .faq-item p{margin:0;color:var(--ink-soft);max-width:62ch;font-size:0.98rem;}
+  .faq-item a{color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none;padding-bottom:1px;}
+
+  /* -------------------- legal pages -------------------- */
+  .legal-body{max-width:70ch;}
+  .legal-body h2{font-size:1.25rem;font-weight:500;margin-top:2.3rem;margin-bottom:0.7rem;}
+  .legal-body h2:first-child{margin-top:0;}
+  .legal-body p, .legal-body li{color:var(--ink-soft);margin:0.85rem 0;font-size:0.98rem;}
+  .legal-body ul{padding-left:1.3rem;}
+  .legal-body a{color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none;padding-bottom:1px;}
+  .legal-updated{font-size:0.82rem;color:var(--ink-soft);opacity:0.85;margin-top:0.6rem;}
+
   /* -------------------- footer -------------------- */
   footer{padding:4.5rem 0 0;}
   .footer-grid{
@@ -457,6 +477,7 @@
     .approach-item:nth-child(even){padding-left:0;}
     .steps{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
+    .final-cta-simple{flex-direction:column;align-items:flex-start;}
   }
 
   @media (max-width: 500px){
@@ -702,11 +723,13 @@
       '',
       message
     ];
-    var mailto = 'mailto:lindsay@rosenpsych.com'
+    // PREVIEW BUILD: routed to Chad for review, not Lindsay. Change this address
+    // to lindsay@rosenpsych.com before this site actually goes live.
+    var mailto = 'mailto:dahc.reverse@gmail.com'
       + '?subject=' + encodeURIComponent(subject)
       + '&body=' + encodeURIComponent(bodyLines.join('\n'));
     window.location.href = mailto;
-    status.textContent = 'Opening your email app to send this to Lindsay…';
+    status.textContent = 'Opening your email app to send this message…';
   });
 })();
 </script>
