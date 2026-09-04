@@ -247,7 +247,9 @@
   }
   .state-dropdown div{padding:0.5em 0.85em;font-size:0.8rem;display:flex;justify-content:space-between;gap:1rem;}
   .state-dropdown div + div{border-top:1px solid var(--line);}
-  .state-dropdown .yes{color:var(--gold);white-space:nowrap;}
+  .state-dropdown .yes{color:var(--gold);white-space:nowrap;text-decoration:none;}
+  a.state-dropdown-link, .state-dropdown a.yes{border-bottom:1px solid transparent;}
+  .state-dropdown a.yes:hover{border-bottom-color:var(--gold);}
   .state-dropdown .empty{color:var(--ink-soft);font-style:italic;line-height:1.4;}
 
   .hero-plinth{
@@ -379,16 +381,34 @@
 
   /* -------------------- final cta -------------------- */
   .final-cta{text-align:left;}
-  .final-cta-grid{
-    display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;
+  .final-cta h2{font-size:clamp(2rem,3.6vw,2.9rem);max-width:12ch;}
+  .final-cta p{color:var(--ink-soft);max-width:36ch;margin-top:1rem;font-size:1.02rem;}
+  .final-cta-note{margin-top:1.4rem;font-size:0.85rem;color:var(--ink-soft);}
+  .final-cta-note a{color:var(--ink);}
+
+  .contact-form{display:flex;flex-direction:column;gap:1.15rem;max-width:440px;}
+  .form-row{display:flex;gap:1rem;}
+  .form-row .form-field{flex:1;}
+  .form-field{display:flex;flex-direction:column;gap:0.4rem;}
+  .form-field label{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;
+    font-size:0.7rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-soft);
   }
-  .final-cta h2{font-size:clamp(2.2rem,4.2vw,3.4rem);max-width:11ch;}
-  .final-cta p{color:var(--ink-soft);max-width:34ch;margin-top:1rem;font-size:1.02rem;}
+  .form-field input, .form-field textarea{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-size:0.98rem;color:var(--ink);
+    background:transparent;border:none;border-bottom:1px solid var(--line);
+    padding:0.5em 0.05em;outline:none;resize:vertical;
+  }
+  .form-field input:focus, .form-field textarea:focus{border-color:var(--gold);}
+  .form-field textarea{min-height:5.5em;}
+  .form-note{font-size:0.78rem;line-height:1.55;color:var(--ink-soft);max-width:40ch;}
+  .form-actions{margin-top:0.2rem;}
+  .form-status{font-size:0.85rem;color:var(--ink-soft);margin-top:0.2rem;min-height:1.2em;}
 
   /* -------------------- footer -------------------- */
   footer{padding:4.5rem 0 0;}
   .footer-grid{
-    display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:3rem;
+    display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:3rem;
     padding-bottom:3.5rem;border-bottom:1px solid var(--line-inv);
   }
   .footer-brand .brand-name{color:var(--paper);}
@@ -408,7 +428,11 @@
   }
   .footer-legal .crisis{max-width:62ch;}
   .footer-legal .crisis b{color:var(--paper);font-weight:500;}
-  .footer-legal .rights{white-space:nowrap;}
+  .footer-legal .rights{white-space:nowrap;margin:0;}
+  .footer-bottom{display:flex;flex-direction:column;align-items:flex-end;gap:0.4rem;}
+  .footer-legal-links{margin:0;white-space:nowrap;}
+  .footer-legal-links a{color:var(--ink-soft-inv);text-decoration:none;border-bottom:1px solid transparent;}
+  .footer-legal-links a:hover{color:var(--gold-bright);border-bottom-color:var(--gold-bright);}
 
   @media (prefers-reduced-motion: no-preference){
     .fade-up{animation:fadeUp .7s cubic-bezier(.2,.7,.3,1) both;}
@@ -433,7 +457,6 @@
     .approach-item:nth-child(even){padding-left:0;}
     .steps{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
-    .final-cta-grid{flex-direction:column;align-items:flex-start;}
   }
 
   @media (max-width: 500px){
@@ -443,7 +466,6 @@
 </head>
 <body>
 
-<!-- ================= SCHEMA ================= -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -468,11 +490,9 @@
   "areaServed": {"@type": "State", "name": "Texas"}
 }
 </script>
-
-<!-- ================= NAV ================= -->
 <header id="siteHeader">
   <div class="wrap nav">
-    <a class="brand" href="/#top">
+    <a class="brand" href="/lindsay/#top">
       <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
         <circle cx="16" cy="20" r="11" fill="none" stroke="#B9852F" stroke-width="1.6"/>
         <circle cx="25" cy="20" r="11" fill="none" stroke="#202B32" stroke-width="1.6"/>
@@ -483,14 +503,14 @@
       </span>
     </a>
     <nav class="links">
-      <a href="/#about">About</a>
-      <a href="/#services">Services</a>
-      <a href="/#approach">Approach</a>
-      <a href="/#start">Getting Started</a>
-      <a href="/#contact">Contact</a>
+      <a href="/lindsay/#about">About</a>
+      <a href="/lindsay/#services">Services</a>
+      <a href="/lindsay/#approach">Approach</a>
+      <a href="/lindsay/#start">Getting Started</a>
+      <a href="/lindsay/#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="/#contact">Schedule a consultation</a>
+      <a class="btn btn-primary" href="/lindsay/#contact">Schedule a consultation</a>
       <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
         <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
       </button>
@@ -498,20 +518,19 @@
   </div>
   <div class="mobile-nav" id="mobileNav">
     <nav class="wrap mobile-nav-list">
-      <a href="/#about">About</a>
-      <a href="/#services">Services</a>
-      <a href="/#approach">Approach</a>
-      <a href="/#start">Getting Started</a>
-      <a href="/#contact">Contact</a>
+      <a href="/lindsay/#about">About</a>
+      <a href="/lindsay/#services">Services</a>
+      <a href="/lindsay/#approach">Approach</a>
+      <a href="/lindsay/#start">Getting Started</a>
+      <a href="/lindsay/#contact">Contact</a>
     </nav>
   </div>
 </header>
-
 <main id="top">
 
   <!-- ================= BREADCRUMB ================= -->
   <div class="wrap" style="padding-top:1.6rem;">
-    <a href="/#top" class="mono" style="font-size:0.76rem;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;">&larr; Telehealth coverage, all 43 states</a>
+    <a href="/lindsay/#top" class="mono" style="font-size:0.76rem;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;">&larr; Telehealth coverage, all 43 states</a>
   </div>
 
   <!-- ================= STATE HERO ================= -->
@@ -523,8 +542,8 @@
         provide telehealth psychotherapy to adults and adolescents throughout Texas. Same doctoral-level
         training, same warmth, just wherever you are in Texas.</p>
       <div class="hero-actions" style="margin-top:1.6rem;">
-        <a class="btn btn-primary" href="/#contact">Schedule a free consultation</a>
-        <a class="btn btn-ghost" href="/#about">Meet Dr. Rosen</a>
+        <a class="btn btn-primary" href="/lindsay/#contact">Schedule a free consultation</a>
+        <a class="btn btn-ghost" href="/lindsay/#about">Meet Dr. Rosen</a>
       </div>
     </div>
   </section>
@@ -554,7 +573,7 @@
     <div class="wrap">
       <div class="section-head">
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">What we'd work on</h2>
-        <p><a href="/#services" style="color:inherit;">See all services</a></p>
+        <p><a href="/lindsay/#services" style="color:inherit;">See all services</a></p>
       </div>
       <div class="service-list">
         <div class="service-row">
@@ -607,9 +626,9 @@
         </div>
         <div class="footer-col">
           <h4>Coverage</h4>
-          <a href="/#top">Check your state</a>
-          <a href="/#about">About Dr. Rosen</a>
-          <a href="/#services">All services</a>
+          <a href="/lindsay/#top">Check your state</a>
+          <a href="/lindsay/#about">About Dr. Rosen</a>
+          <a href="/lindsay/#services">All services</a>
         </div>
       </div>
       <div class="footer-legal">
@@ -622,8 +641,95 @@
     </div>
   </footer>
 </main>
-
+<!-- ================= FOOTER ================= -->
+  <footer class="on-ink">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="16" cy="20" r="11" fill="none" stroke="#D6A24A" stroke-width="1.6"/>
+            <circle cx="25" cy="20" r="11" fill="none" stroke="#E7EAE2" stroke-width="1.6"/>
+          </svg>
+          <span class="brand-name" style="display:block;margin-top:0.7rem;">Rosen Psychology</span>
+          <p>Psychotherapy for adolescents and adults, and psychological assessment, in Denver, Colorado
+            and by telehealth across the country.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:lindsay@rosenpsych.com" class="mono">lindsay@rosenpsych.com</a>
+          <a href="tel:+17202579204" class="mono">+1 720-257-9204</a>
+          <address class="mono">1557 N Ogden Street, Suite 11<br>Denver, CO 80218</address>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="/lindsay/#about">About Dr. Rosen</a>
+          <a href="/lindsay/#services">Services</a>
+          <a href="/lindsay/#approach">Approach</a>
+          <a href="/lindsay/#start">Getting Started</a>
+          <a href="/lindsay/faq/">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Coverage</h4>
+          <a href="/lindsay/#top">Check telehealth in your state</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p class="crisis"><b>Rosen Psychology does not provide emergency or crisis services.</b> If you are
+          experiencing a mental health crisis, call or text 988, or visit 988colorado.com. If this is an
+          emergency, call 911. You have the right to a Good Faith Estimate of expected charges. Ask any
+          provider before scheduling. Learn more at cms.gov/nosurprises.</p>
+        <div class="footer-bottom">
+          <p class="rights">© 2026 Rosen Psychology · Licensed Clinical Psychologist, Colorado</p>
+          <p class="footer-legal-links"><a href="/lindsay/privacy/">Privacy Policy</a> · <a href="/lindsay/terms/">Terms &amp; Conditions</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
 <script>
+(function(){
+  var STATES = [
+    ["AL","Alabama"],["AZ","Arizona"],["AR","Arkansas"],["MP","N. Mariana Islands"],
+    ["CO","Colorado"],["CT","Connecticut"],["DE","Delaware"],["DC","District of Columbia"],
+    ["FL","Florida"],["GA","Georgia"],["ID","Idaho"],["IL","Illinois"],["IN","Indiana"],
+    ["KS","Kansas"],["KY","Kentucky"],["ME","Maine"],["MD","Maryland"],["MI","Michigan"],
+    ["MN","Minnesota"],["MS","Mississippi"],["MO","Missouri"],["MT","Montana"],["NE","Nebraska"],
+    ["NV","Nevada"],["NH","New Hampshire"],["NJ","New Jersey"],["NC","North Carolina"],
+    ["ND","North Dakota"],["OH","Ohio"],["OK","Oklahoma"],["PA","Pennsylvania"],["RI","Rhode Island"],
+    ["SC","South Carolina"],["SD","South Dakota"],["TN","Tennessee"],["TX","Texas"],["UT","Utah"],
+    ["VT","Vermont"],["VA","Virginia"],["WA","Washington"],["WV","West Virginia"],["WI","Wisconsin"],
+    ["WY","Wyoming"]
+  ];
+  var input = document.getElementById('stateInput');
+  var box = document.getElementById('stateDropdown');
+  if(!input || !box) return;
+
+  var STATE_PAGES = { "TX": "/lindsay/telehealth/texas/" };
+
+  function render(raw){
+    var q = raw.trim().toLowerCase();
+    if(!q){ box.hidden = true; box.innerHTML = ''; return; }
+    var matches = STATES.filter(function(s){
+      return s[1].toLowerCase().indexOf(q) === 0 || s[0].toLowerCase() === q;
+    }).slice(0, 6);
+    if(matches.length){
+      box.innerHTML = matches.map(function(s){
+        var page = STATE_PAGES[s[0]];
+        var right = page
+          ? '<a class="yes" href="'+page+'">Available ✓</a>'
+          : '<span class="yes">Available ✓</span>';
+        return '<div><span>'+s[1]+'</span>'+right+'</div>';
+      }).join('');
+    } else {
+      box.innerHTML = '<div class="empty">Not licensed there yet.<br>Denver in-person is always an option.</div>';
+    }
+    box.hidden = false;
+  }
+
+  input.addEventListener('input', function(){ render(input.value); });
+  input.addEventListener('focus', function(){ if(input.value) render(input.value); });
+  input.addEventListener('blur', function(){ setTimeout(function(){ box.hidden = true; }, 150); });
+})();
+
 (function(){
   var header = document.getElementById('siteHeader');
   var toggle = document.getElementById('navToggle');
@@ -649,7 +755,36 @@
     if(window.innerWidth > 880) close();
   });
 })();
-</script>
 
+(function(){
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('cfStatus');
+  if(!form || !status) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var phone = form.phone.value.trim();
+    var message = form.message.value.trim();
+    if(!name || !email || !message){
+      status.textContent = 'Please fill in your name, email, and a short message.';
+      return;
+    }
+    var subject = 'New consultation request from ' + name;
+    var bodyLines = [
+      'Name: ' + name,
+      'Email: ' + email,
+      'Phone: ' + (phone || 'n/a'),
+      '',
+      message
+    ];
+    var mailto = 'mailto:lindsay@rosenpsych.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = mailto;
+    status.textContent = 'Opening your email app to send this to Lindsay…';
+  });
+})();
+</script>
 </body>
 </html>
