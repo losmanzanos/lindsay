@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://rosenpsych.com/telehealth/texas/">
+<title>Telehealth in Texas | Rosen Psychology</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  /* ---------------------------------------------------------------
+     Rosen Psychology, homepage concept
+     Deliberate, single visual world: a considered slate-ink /
+     antique-gold system rather than a light/dark toggle. Every
+     color below is declared explicitly on :root and painted on
+     every surface, so the page holds its intended art direction
+     regardless of the viewer's OS theme.
+  ----------------------------------------------------------------- */
+  :root{
+    --paper: #E7EAE2;      /* pale sage-stone ground (not cream) */
+    --paper-2: #DEE2D7;    /* slightly deeper stone, for panels on paper */
+    --ink: #202B32;        /* deep slate-blue-charcoal, primary dark */
+    --ink-2: #29353D;      /* lifted ink, for panels on ink */
+    --ink-soft: #55646C;   /* muted slate, secondary text on paper */
+    --ink-soft-inv: #A9B6BB; /* muted stone, secondary text on ink */
+    --gold: #B9852F;       /* antique gold/ochre, primary accent */
+    --gold-bright: #D6A24A;/* lifted gold for text-on-ink */
+    --clay: #9C5A45;       /* muted brick-rose, sparing secondary accent */
+    --line: rgba(32,43,50,0.14);     /* hairline on paper */
+    --line-inv: rgba(231,234,226,0.18); /* hairline on ink */
+    --focus: #6E8AA0;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ::selection{background:var(--gold);color:var(--ink);}
+
+  h1,h2,h3{
+    font-family:"Fraunces", Georgia, "Times New Roman", serif;
+    font-weight:500;
+    line-height:1.05;
+    margin:0;
+    text-wrap:balance;
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;
+    font-weight:500;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    display:flex;
+    align-items:center;
+    gap:0.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:1.4em;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  .on-ink .eyebrow{color:var(--gold-bright);}
+  .on-ink .eyebrow::before{background:var(--gold-bright);}
+
+  .mono{font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .btn{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;
+    font-weight:500;
+    font-size:0.92rem;
+    line-height:1;
+    letter-spacing:0.01em;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.6em;
+    padding:0.95em 1.5em;
+    border-radius:2px;
+    transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease, border-color .18s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+  .btn-primary{
+    background:var(--gold);
+    color:var(--ink);
+    border:1px solid var(--gold);
+  }
+  .btn-primary:hover{background:var(--gold-bright);border-color:var(--gold-bright);transform:translateY(-1px);}
+  .btn-ghost{
+    background:transparent;
+    color:inherit;
+    border:1px solid currentColor;
+    opacity:0.85;
+  }
+  .btn-ghost:hover{opacity:1;background:rgba(0,0,0,0.04);}
+  .on-ink .btn-ghost:hover{background:rgba(255,255,255,0.06);}
+
+  /* -------------------- nav -------------------- */
+  header{
+    position:sticky;top:0;z-index:40;
+    background:rgba(231,234,226,0.9);
+    backdrop-filter:blur(10px) saturate(1.1);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:1.1rem;padding-bottom:1.1rem;
+  }
+  .brand{
+    display:flex;align-items:center;gap:0.65rem;
+    text-decoration:none;color:var(--ink);
+  }
+  .brand-mark{width:30px;height:30px;flex:none;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-name{font-family:"Fraunces", serif;font-size:1.12rem;font-weight:500;}
+  .brand-sub{font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;font-size:0.62rem;letter-spacing:0.09em;color:var(--ink-soft);text-transform:uppercase;}
+  nav.links{display:flex;align-items:center;gap:2.1rem;}
+  nav.links a{
+    font-size:0.87rem;text-decoration:none;color:var(--ink-soft);
+    position:relative;padding-bottom:2px;
+  }
+  nav.links a::after{
+    content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;
+    background:var(--gold);transform:scaleX(0);transform-origin:right;
+    transition:transform .22s ease;
+  }
+  nav.links a:hover{color:var(--ink);}
+  nav.links a:hover::after{transform:scaleX(1);transform-origin:left;}
+  .nav-cta{display:flex;align-items:center;gap:1.6rem;}
+  .nav-cta .btn-primary{padding:0.7em 1.2em;}
+  .nav-toggle{
+    display:none;
+    width:34px;height:34px;flex:none;
+    align-items:center;justify-content:center;
+    background:transparent;border:1px solid var(--line);border-radius:2px;
+    cursor:pointer;
+  }
+  .nav-toggle-bars{width:16px;height:11px;position:relative;}
+  .nav-toggle-bars span{
+    position:absolute;left:0;right:0;height:1px;background:var(--ink);
+    transition:transform .2s ease, opacity .2s ease, top .2s ease;
+  }
+  .nav-toggle-bars span:nth-child(1){top:0;}
+  .nav-toggle-bars span:nth-child(2){top:5px;}
+  .nav-toggle-bars span:nth-child(3){top:10px;}
+  header.nav-open .nav-toggle-bars span:nth-child(1){top:5px;transform:rotate(45deg);}
+  header.nav-open .nav-toggle-bars span:nth-child(2){opacity:0;}
+  header.nav-open .nav-toggle-bars span:nth-child(3){top:5px;transform:rotate(-45deg);}
+
+  .mobile-nav{
+    display:none;
+    max-height:0;overflow:hidden;
+    border-top:1px solid transparent;
+    transition:max-height .25s ease;
+  }
+  header.nav-open .mobile-nav{max-height:400px;border-top-color:var(--line);}
+  .mobile-nav-list{display:flex;flex-direction:column;padding:0.5rem 0 1.1rem;}
+  .mobile-nav-list a{
+    padding:0.85rem 0;font-size:0.98rem;text-decoration:none;color:var(--ink);
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-nav-list a:last-child{border-bottom:none;}
+
+  /* -------------------- section rhythm -------------------- */
+  section{position:relative;}
+  .on-paper{background:var(--paper);color:var(--ink);}
+  .on-ink{background:var(--ink);color:var(--paper);}
+  .band-tight{padding:5.5rem 0;}
+  .band{padding:7rem 0;}
+
+  /* -------------------- hero -------------------- */
+  /* Fills the screen below the sticky nav on first load (73px ≈ nav height),
+     with a floor so it never gets cramped on short viewports. */
+  .hero{
+    min-height:calc(100svh - 73px);
+    display:flex;
+    align-items:center;
+    padding:1.75rem 0;
+    z-index:5;
+  }
+  .hero .wrap{width:100%;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:clamp(1.75rem,4vw,3.5rem);
+    align-items:center;
+  }
+  .hero-eyebrow{margin-bottom:0.85rem;}
+  .hero h1{
+    font-size:clamp(2.1rem, 3.8vw, 3.3rem);
+    max-width:20ch;
+  }
+  .hero h1 em{font-style:italic;font-weight:400;}
+  .hero-sub{
+    margin-top:0.9rem;
+    font-size:1rem;
+    max-width:44ch;
+    color:var(--ink-soft);
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:0.85rem;margin-top:1.3rem;align-items:center;}
+  .hero-meta{
+    margin-top:1.2rem;padding-top:0.9rem;border-top:1px solid var(--line);
+    font-size:0.78rem;color:var(--ink-soft);display:flex;gap:1.3rem;flex-wrap:wrap;
+  }
+  .hero-meta span{display:flex;align-items:center;gap:0.5em;}
+  .hero-meta b{color:var(--ink);font-weight:500;}
+  .hero-footnote{
+    margin:0.5rem 0 0;font-size:0.7rem;letter-spacing:0.01em;
+    color:var(--ink-soft);opacity:0.8;
+  }
+
+  .state-check{position:relative;}
+  .state-check-inner{display:inline-flex;align-items:center;gap:0.4em;}
+  .state-input{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-size:0.8rem;
+    background:transparent;border:none;border-bottom:1px solid var(--ink-soft);
+    color:var(--ink);padding:0.1em 0 0.15em;width:6.2em;outline:none;
+  }
+  .state-input:focus{border-color:var(--gold);}
+  .state-input::placeholder{color:var(--ink-soft);opacity:0.75;}
+  .state-dropdown{
+    position:absolute;top:100%;left:0;margin-top:0.5rem;
+    background:var(--paper);border:1px solid var(--line);border-radius:2px;
+    min-width:230px;max-height:190px;overflow-y:auto;
+    box-shadow:0 10px 26px rgba(32,43,50,0.14);
+    z-index:20;
+  }
+  .state-dropdown div{padding:0.5em 0.85em;font-size:0.8rem;display:flex;justify-content:space-between;gap:1rem;}
+  .state-dropdown div + div{border-top:1px solid var(--line);}
+  .state-dropdown .yes{color:var(--gold);white-space:nowrap;}
+  .state-dropdown .empty{color:var(--ink-soft);font-style:italic;line-height:1.4;}
+
+  .hero-plinth{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:2px;
+    padding:1.8rem 1.8rem 1.3rem;
+    display:flex;flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    min-height:0;
+    height:100%;
+    max-height:340px;
+  }
+  .hero-plinth::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(214,162,74,0.16), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-mark{width:100%;max-width:230px;margin:0 auto;display:block;}
+  .hero-plinth-cap b{color:var(--gold-bright);font-weight:500;}
+
+  /* -------------------- pull quote -------------------- */
+  .quote-band{padding:6.5rem 0;}
+  .quote-mark{
+    width:34px;height:24px;fill:var(--gold-bright);margin-bottom:1.2rem;
+  }
+  blockquote{
+    margin:0;font-family:"Fraunces", serif;font-style:italic;font-weight:400;
+    font-size:clamp(1.55rem, 3vw, 2.35rem);line-height:1.35;
+    max-width:19ch;color:var(--paper);
+  }
+  .quote-attr{margin-top:1.6rem;font-size:0.82rem;color:var(--ink-soft-inv);}
+
+  /* -------------------- about -------------------- */
+  .about-grid{
+    display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);
+  }
+  .about-grid h2{font-size:clamp(1.9rem,3.3vw,2.7rem);max-width:13ch;}
+  .about-body p{max-width:56ch;color:var(--ink-soft);margin:1.1rem 0 0;}
+  .about-body p:first-of-type{margin-top:1.4rem;}
+  .transcript{
+    margin-top:2.3rem;border-top:1px solid var(--line);
+  }
+  .transcript-row{
+    display:flex;justify-content:space-between;gap:1.5rem;
+    padding:0.85rem 0;border-bottom:1px solid var(--line);
+    font-size:0.86rem;
+  }
+  .transcript-row .school{font-weight:500;}
+  .transcript-row .credential{font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;color:var(--ink-soft);font-size:0.78rem;text-align:right;white-space:nowrap;}
+  .about-cta{margin-top:2.1rem;}
+  .about-cta a{font-size:0.9rem;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:2px;}
+
+  /* -------------------- services -------------------- */
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;
+    margin-bottom:3rem;flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(1.9rem,3.3vw,2.7rem);}
+  .section-head p{max-width:36ch;color:var(--ink-soft);font-size:0.98rem;margin:0;}
+
+  .service-list{border-top:1px solid var(--line);}
+  .service-row{
+    display:grid;grid-template-columns:1.4fr 0.55fr 2fr;gap:2rem;
+    padding:2.1rem 0;border-bottom:1px solid var(--line);
+    align-items:baseline;
+  }
+  .service-row h3{font-size:1.55rem;font-weight:500;}
+  .service-tag{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;font-size:0.72rem;letter-spacing:0.06em;
+    color:var(--clay);align-self:start;padding-top:0.35rem;text-transform:uppercase;
+  }
+  .service-row p{margin:0;color:var(--ink-soft);max-width:52ch;font-size:0.97rem;}
+  .service-row.soon h3{color:var(--ink-soft);}
+  .service-row.soon .service-tag{color:var(--gold);}
+
+  /* -------------------- approach -------------------- */
+  .approach-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:0;border-top:1px solid var(--line-inv);
+  }
+  .approach-item{
+    padding:2.1rem 2.2rem 2.1rem 0;border-bottom:1px solid var(--line-inv);
+  }
+  .approach-item:nth-child(odd){border-right:1px solid var(--line-inv);padding-right:2.4rem;}
+  .approach-item:nth-child(even){padding-left:2.4rem;}
+  .approach-bullet{
+    width:7px;height:7px;background:var(--gold-bright);border-radius:50%;
+    display:inline-block;margin-bottom:0.9rem;
+  }
+  .approach-item h3{
+    font-family:"Fraunces",serif;font-weight:500;font-size:1.28rem;color:var(--paper);
+    margin-bottom:0.55rem;
+  }
+  .approach-item p{margin:0;color:var(--ink-soft-inv);font-size:0.95rem;max-width:42ch;}
+
+  /* -------------------- specialties -------------------- */
+  .tag-cloud{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2.4rem;}
+  .tag-cloud span{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-size:0.78rem;
+    padding:0.55em 0.95em;border:1px solid var(--line);border-radius:2px;
+    color:var(--ink-soft);
+  }
+
+  /* -------------------- getting started -------------------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,2.6rem);}
+  .step{border-top:2px solid var(--ink);padding-top:1.4rem;}
+  .step-index{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;color:var(--gold);
+    font-size:0.8rem;letter-spacing:0.04em;margin-bottom:1rem;display:block;
+  }
+  .step h3{font-size:1.28rem;font-weight:500;margin-bottom:0.6rem;}
+  .step p{margin:0;color:var(--ink-soft);font-size:0.93rem;max-width:32ch;}
+
+  /* -------------------- practical strip -------------------- */
+  .practical{
+    border-top:1px solid var(--line-inv);border-bottom:1px solid var(--line-inv);
+    padding:1.6rem 0;
+  }
+  .practical .wrap{
+    display:flex;flex-wrap:wrap;gap:1rem 2.6rem;justify-content:space-between;
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;font-size:0.78rem;color:var(--ink-soft-inv);letter-spacing:0.01em;
+  }
+  .practical b{color:var(--paper);font-weight:600;}
+
+  /* -------------------- final cta -------------------- */
+  .final-cta{text-align:left;}
+  .final-cta-grid{
+    display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;
+  }
+  .final-cta h2{font-size:clamp(2.2rem,4.2vw,3.4rem);max-width:11ch;}
+  .final-cta p{color:var(--ink-soft);max-width:34ch;margin-top:1rem;font-size:1.02rem;}
+
+  /* -------------------- footer -------------------- */
+  footer{padding:4.5rem 0 0;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:3rem;
+    padding-bottom:3.5rem;border-bottom:1px solid var(--line-inv);
+  }
+  .footer-brand .brand-name{color:var(--paper);}
+  .footer-brand p{color:var(--ink-soft-inv);max-width:32ch;margin-top:1rem;font-size:0.92rem;}
+  .footer-col h4{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-size:0.7rem;letter-spacing:0.1em;
+    text-transform:uppercase;color:var(--ink-soft-inv);margin:0 0 1rem;font-weight:500;
+  }
+  .footer-col a, .footer-col address{
+    display:block;color:var(--paper);text-decoration:none;font-size:0.92rem;
+    margin-bottom:0.65rem;font-style:normal;line-height:1.5;
+  }
+  .footer-col a:hover{color:var(--gold-bright);}
+  .footer-legal{
+    padding:2rem 0 2.6rem;display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+    font-size:0.78rem;color:var(--ink-soft-inv);
+  }
+  .footer-legal .crisis{max-width:62ch;}
+  .footer-legal .crisis b{color:var(--paper);font-weight:500;}
+  .footer-legal .rights{white-space:nowrap;}
+
+  @media (prefers-reduced-motion: no-preference){
+    .fade-up{animation:fadeUp .7s cubic-bezier(.2,.7,.3,1) both;}
+    .fade-up.d1{animation-delay:.08s;}
+    .fade-up.d2{animation-delay:.16s;}
+    .fade-up.d3{animation-delay:.24s;}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  }
+
+  @media (max-width: 880px){
+    nav.links{display:none;}
+    .nav-toggle{display:flex;}
+    .mobile-nav{display:block;}
+    .hero{min-height:0;padding:2.2rem 0 2.6rem;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-plinth{order:-1;max-width:320px;width:100%;margin:0 auto 1.6rem;height:auto;max-height:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .service-row{grid-template-columns:1fr;gap:0.6rem;}
+    .service-tag{padding-top:0;}
+    .approach-grid{grid-template-columns:1fr;}
+    .approach-item:nth-child(odd){border-right:none;padding-right:0;}
+    .approach-item:nth-child(even){padding-left:0;}
+    .steps{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
+    .final-cta-grid{flex-direction:column;align-items:flex-start;}
+  }
+
+  @media (max-width: 500px){
+    .nav-cta .btn-primary{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= SCHEMA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  "name": "Dr. Lindsay Rosen, PsyD",
+  "url": "https://rosenpsych.com/telehealth/texas/",
+  "telephone": "+1-720-257-9204",
+  "email": "lindsay@rosenpsych.com",
+  "medicalSpecialty": "Psychiatric",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1557 N Ogden Street, Suite 11",
+    "addressLocality": "Denver",
+    "addressRegion": "CO",
+    "postalCode": "80218",
+    "addressCountry": "US"
+  },
+  "availableService": [
+    {"@type": "MedicalTherapy", "name": "Adolescent Therapy"},
+    {"@type": "MedicalTherapy", "name": "Individual Therapy"}
+  ],
+  "areaServed": {"@type": "State", "name": "Texas"}
+}
+</script>
+
+<!-- ================= NAV ================= -->
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a class="brand" href="/#top">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="16" cy="20" r="11" fill="none" stroke="#B9852F" stroke-width="1.6"/>
+        <circle cx="25" cy="20" r="11" fill="none" stroke="#202B32" stroke-width="1.6"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">Rosen Psychology</span>
+        <span class="brand-sub">Denver, Colorado</span>
+      </span>
+    </a>
+    <nav class="links">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#start">Getting Started</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="/#contact">Schedule a consultation</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="wrap mobile-nav-list">
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#start">Getting Started</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= BREADCRUMB ================= -->
+  <div class="wrap" style="padding-top:1.6rem;">
+    <a href="/#top" class="mono" style="font-size:0.76rem;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;">&larr; Telehealth coverage, all 43 states</a>
+  </div>
+
+  <!-- ================= STATE HERO ================= -->
+  <section class="on-paper" style="padding:2rem 0 3.5rem;">
+    <div class="wrap" style="max-width:760px;">
+      <p class="eyebrow">Telehealth in Texas &middot; Licensed Clinical Psychologist</p>
+      <h1 style="font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:18ch;margin-top:1rem;">Therapy in Texas,<br><em>without leaving Texas.</em></h1>
+      <p class="hero-sub" style="margin-top:1.1rem;max-width:56ch;">Dr. Lindsay Rosen is a licensed clinical psychologist based in Denver, Colorado, and licensed to
+        provide telehealth psychotherapy to adults and adolescents throughout Texas. Same doctoral-level
+        training, same warmth, just wherever you are in Texas.</p>
+      <div class="hero-actions" style="margin-top:1.6rem;">
+        <a class="btn btn-primary" href="/#contact">Schedule a free consultation</a>
+        <a class="btn btn-ghost" href="/#about">Meet Dr. Rosen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOGISTICS ================= -->
+  <section class="on-paper band-tight" style="background:var(--paper-2);">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">Good to know</p>
+        <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:14ch;">Telehealth, made specific to Texas.</h2>
+      </div>
+      <div class="about-body">
+        <p>Sessions happen over secure video, the same 50 minutes as an in-person session in her Denver
+          office. A few things worth knowing if you're calling in from Texas specifically:</p>
+        <div class="transcript">
+          <div class="transcript-row"><span class="school">Time zone</span><span class="credential">Sessions run Mountain Time (1 hr behind Central)</span></div>
+          <div class="transcript-row"><span class="school">Session length</span><span class="credential">50 minutes, weekly or biweekly</span></div>
+          <div class="transcript-row"><span class="school">Insurance</span><span class="credential">In-network with Lyra Health; superbills available</span></div>
+          <div class="transcript-row"><span class="school">Getting started</span><span class="credential">Free 15-minute consultation call</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES RECAP ================= -->
+  <section class="on-paper band-tight">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">What we'd work on</h2>
+        <p><a href="/#services" style="color:inherit;">See all services</a></p>
+      </div>
+      <div class="service-list">
+        <div class="service-row">
+          <h3 style="font-size:1.35rem;">Adolescent Therapy</h3>
+          <span class="service-tag">AGES 13&ndash;19</span>
+          <p>A private, nonjudgmental space for Texas teens to slow down and get curious about what's
+            underneath, not a parent, teacher, or peer.</p>
+        </div>
+        <div class="service-row">
+          <h3 style="font-size:1.35rem;">Individual Therapy</h3>
+          <span class="service-tag">ADULTS</span>
+          <p>For anxiety, self-esteem, relationship patterns, career burnout, and life transitions, grounded
+            in understanding your history, not just your symptoms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="on-paper band-tight final-cta" id="contact" style="background:var(--paper-2);border-top:1px solid var(--line);">
+    <div class="wrap final-cta-grid">
+      <div>
+        <p class="eyebrow">Let's talk</p>
+        <h2 style="margin-top:1rem;font-size:clamp(2rem,3.6vw,2.8rem);">Ready when you are, Texas.</h2>
+        <p>Book a complimentary 15-minute consultation: no forms, no pressure, just a conversation
+          about what brings you to therapy.</p>
+      </div>
+      <a class="btn btn-primary" href="mailto:lindsay@rosenpsych.com" style="padding:1.05em 1.9em;font-size:0.9rem;">Schedule a consultation</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="on-ink">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="16" cy="20" r="11" fill="none" stroke="#D6A24A" stroke-width="1.6"/>
+            <circle cx="25" cy="20" r="11" fill="none" stroke="#E7EAE2" stroke-width="1.6"/>
+          </svg>
+          <span class="brand-name" style="display:block;margin-top:0.7rem;">Rosen Psychology</span>
+          <p>Psychotherapy for adolescents and adults, and psychological assessment, in Denver, Colorado
+            and by telehealth across the country, including Texas.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:lindsay@rosenpsych.com" class="mono">lindsay@rosenpsych.com</a>
+          <a href="tel:+17202579204" class="mono">+1 720-257-9204</a>
+          <address class="mono">1557 N Ogden Street, Suite 11<br>Denver, CO 80218</address>
+        </div>
+        <div class="footer-col">
+          <h4>Coverage</h4>
+          <a href="/#top">Check your state</a>
+          <a href="/#about">About Dr. Rosen</a>
+          <a href="/#services">All services</a>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p class="crisis"><b>Rosen Psychology does not provide emergency or crisis services.</b> If you are
+          experiencing a mental health crisis, call or text 988, or visit 988colorado.com. If this is an
+          emergency, call 911. You have the right to a Good Faith Estimate of expected charges. Ask any
+          provider before scheduling. Learn more at cms.gov/nosurprises.</p>
+        <p class="rights">&copy; 2026 Rosen Psychology &middot; Licensed Clinical Psychologist, Colorado</p>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('mobileNav');
+  if(!header || !toggle || !panel) return;
+  function close(){
+    header.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+  }
+  function open(){
+    header.classList.add('nav-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Close menu');
+  }
+  toggle.addEventListener('click', function(){
+    header.classList.contains('nav-open') ? close() : open();
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', close);
+  });
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 880) close();
+  });
+})();
+</script>
+
+</body>
+</html>
