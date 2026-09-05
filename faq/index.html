@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<link rel="canonical" href="https://rosenpsych.com/faq/">
+<meta name="description" content="Fees, insurance, telehealth availability, and what to expect from your first sessions with Dr. Lindsay Rosen.">
+<link rel="canonical" href="/lindsay/faq/">
 <title>FAQ | Rosen Psychology</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <style>
@@ -538,14 +539,14 @@
       </span>
     </a>
     <nav class="links">
-      <a href="/lindsay/#about">About</a>
+      <a href="/lindsay/about/">About</a>
       <a href="/lindsay/#services">Services</a>
       <a href="/lindsay/#approach">Approach</a>
-      <a href="/lindsay/#start">Getting Started</a>
-      <a href="/lindsay/#contact">Contact</a>
+      <a href="/lindsay/getting-started/">Getting Started</a>
+      <a href="/lindsay/contact/">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary" href="/lindsay/#contact">Schedule a consultation</a>
+      <a class="btn btn-primary" href="/lindsay/contact/">Schedule a consultation</a>
       <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
         <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
       </button>
@@ -553,11 +554,11 @@
   </div>
   <div class="mobile-nav" id="mobileNav">
     <nav class="wrap mobile-nav-list">
-      <a href="/lindsay/#about">About</a>
+      <a href="/lindsay/about/">About</a>
       <a href="/lindsay/#services">Services</a>
       <a href="/lindsay/#approach">Approach</a>
-      <a href="/lindsay/#start">Getting Started</a>
-      <a href="/lindsay/#contact">Contact</a>
+      <a href="/lindsay/getting-started/">Getting Started</a>
+      <a href="/lindsay/contact/">Contact</a>
     </nav>
   </div>
 </header>
@@ -569,7 +570,7 @@
       <p class="eyebrow">Frequently asked questions</p>
       <h1 style="font-size:clamp(2.1rem,4vw,3rem);margin-top:1rem;max-width:20ch;">Questions, answered plainly.</h1>
       <p class="hero-sub" style="margin-top:1rem;max-width:56ch;">The practical details, in one place. If something's
-        missing, <a href="/lindsay/#contact" style="color:inherit;text-decoration:underline;">send a note</a> and we'll
+        missing, <a href="/lindsay/contact/" style="color:inherit;text-decoration:underline;">send a note</a> and we'll
         answer directly.</p>
     </div>
   </section>
@@ -581,7 +582,7 @@
 
         <div class="faq-item">
           <h3>Do you offer a free 15-minute consultation?</h3>
-          <p>Yes. Send a note through the <a href="/lindsay/#contact">contact form</a> and we'll set up a short call
+          <p>Yes. Send a note through the <a href="/lindsay/contact/">contact form</a> and we'll set up a short call
             to talk about what brings you in and whether it feels like a good fit, no cost, no obligation.</p>
         </div>
 
@@ -615,7 +616,7 @@
           <h3>What happens in the first few sessions?</h3>
           <p>A free 15-minute call to see if it feels like a fit, a bit of paperwork through a secure client
             portal, and then a first 50-minute session focused on getting to know each other and what brought you
-            in. See the full walkthrough under <a href="/lindsay/#start">Getting Started</a>.</p>
+            in. See the full walkthrough under <a href="/lindsay/getting-started/">Getting Started</a>.</p>
         </div>
 
         <div class="faq-item">
@@ -642,7 +643,7 @@
         <p class="eyebrow">Still have a question?</p>
         <h2 style="margin-top:1rem;">Happy to talk it through.</h2>
       </div>
-      <a class="btn btn-primary" href="/lindsay/#contact" style="padding:1.05em 1.9em;font-size:0.9rem;">Get in touch</a>
+      <a class="btn btn-primary" href="/lindsay/contact/" style="padding:1.05em 1.9em;font-size:0.9rem;">Get in touch</a>
     </div>
   </section>
 
@@ -669,10 +670,13 @@
         </div>
         <div class="footer-col">
           <h4>Site</h4>
-          <a href="/lindsay/#about">About Dr. Rosen</a>
-          <a href="/lindsay/#services">Services</a>
+          <a href="/lindsay/about/">About Dr. Rosen</a>
+          <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
+          <a href="/lindsay/services/individual-therapy/">Individual Therapy</a>
+          <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
           <a href="/lindsay/#approach">Approach</a>
-          <a href="/lindsay/#start">Getting Started</a>
+          <a href="/lindsay/getting-started/">Getting Started</a>
+          <a href="/lindsay/contact/">Contact</a>
           <a href="/lindsay/faq/">FAQ</a>
         </div>
         <div class="footer-col">
@@ -710,7 +714,10 @@
   var box = document.getElementById('stateDropdown');
   if(!input || !box) return;
 
-  var STATE_PAGES = { "TX": "/lindsay/telehealth/texas/" };
+  var STATE_PAGES = {
+    "TX": "/lindsay/telehealth/texas/", "AZ": "/lindsay/telehealth/arizona/", "FL": "/lindsay/telehealth/florida/",
+    "NC": "/lindsay/telehealth/north-carolina/", "VA": "/lindsay/telehealth/virginia/", "WA": "/lindsay/telehealth/washington/"
+  };
 
   function render(raw){
     var q = raw.trim().toLowerCase();
