@@ -131,7 +131,7 @@
     text-decoration:none;color:var(--ink);
   }
   .brand-mark{width:30px;height:30px;flex:none;}
-  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;gap:0.22rem;}
   .brand-name{font-family:"Fraunces", serif;font-size:1.12rem;font-weight:500;}
   .brand-sub{font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;font-size:0.62rem;letter-spacing:0.09em;color:var(--ink-soft);text-transform:uppercase;}
   nav.links{display:flex;align-items:center;gap:2.1rem;}
@@ -472,17 +472,9 @@
     nav.links{display:none;}
     .nav-toggle{display:flex;}
     .mobile-nav{display:block;}
-    .hero{min-height:calc(100svh - 73px);padding:1.4rem 0;display:flex;align-items:center;}
     .hero-grid{grid-template-columns:1fr;gap:1.1rem;}
     .hero-plinth{order:-1;max-width:230px;width:100%;margin:0 auto;height:auto;max-height:none;padding:1.1rem 1.1rem 0.9rem;}
     .hero-plinth .hero-mark{max-width:130px;}
-    .hero-plinth-cap{font-size:0.72rem;margin-top:0.8rem;padding-top:0.65rem;}
-    .hero-eyebrow{margin-bottom:0.5rem;}
-    .hero h1{font-size:clamp(1.6rem,6vw,2.1rem);}
-    .hero-sub{margin-top:0.6rem;font-size:0.9rem;}
-    .hero-actions{margin-top:0.9rem;gap:0.6rem;}
-    .hero-meta{margin-top:0.8rem;padding-top:0.65rem;gap:0.7rem 1rem;}
-    .hero-footnote{font-size:0.66rem;}
     .about-grid{grid-template-columns:1fr;}
     .service-row{grid-template-columns:1fr;gap:0.6rem;}
     .service-tag{padding-top:0;}
@@ -492,6 +484,34 @@
     .steps{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
     .final-cta-simple{flex-direction:column;align-items:flex-start;}
+  }
+
+  /* Tablet / "half desktop" widths: fit the whole hero above the fold, as requested */
+  @media (min-width: 601px) and (max-width: 880px){
+    .hero{min-height:calc(100svh - 73px);padding:1.4rem 0;display:flex;align-items:center;}
+    .hero-plinth-cap{font-size:0.72rem;margin-top:0.8rem;padding-top:0.65rem;}
+    .hero-eyebrow{margin-bottom:0.5rem;}
+    .hero h1{font-size:clamp(1.6rem,6vw,2.1rem);}
+    .hero-sub{margin-top:0.6rem;font-size:0.9rem;}
+    .hero-actions{margin-top:0.9rem;gap:0.6rem;}
+    .hero-meta{margin-top:0.8rem;padding-top:0.65rem;gap:0.7rem 1rem;}
+    .hero-footnote{font-size:0.66rem;}
+  }
+
+  /* True phone widths: don't force a single-viewport fit — let it breathe and scroll
+     naturally instead, with clean full-width stacked buttons instead of an awkward wrap. */
+  @media (max-width: 600px){
+    .hero{min-height:0;padding:2rem 0 2.2rem;}
+    .hero-plinth{max-width:190px;padding:0.9rem 0.9rem 0.75rem;}
+    .hero-plinth .hero-mark{max-width:115px;}
+    .hero-plinth-cap{font-size:0.72rem;margin-top:0.7rem;padding-top:0.6rem;}
+    .hero-eyebrow{margin-bottom:0.55rem;}
+    .hero h1{font-size:clamp(1.7rem,7.5vw,2.1rem);}
+    .hero-sub{margin-top:0.65rem;font-size:0.92rem;}
+    .hero-actions{margin-top:1rem;gap:0.7rem;flex-direction:column;align-items:stretch;}
+    .hero-actions .btn{width:100%;}
+    .hero-meta{margin-top:1rem;padding-top:0.75rem;gap:0.7rem 1rem;}
+    .hero-footnote{font-size:0.68rem;}
   }
 
   @media (max-width: 500px){
