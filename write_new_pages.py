@@ -879,32 +879,47 @@ approach_main = '''<main id="top">
 
   <section class="on-ink band" style="padding-top:0;">
     <div class="wrap">
-      <div class="approach-grid">
-        <div class="approach-item">
-          <h3>The relationship comes first</h3>
-          <p>Research consistently shows the therapeutic relationship is one of the strongest predictors
-            of successful therapy, so sessions are built to feel human, not clinical.</p>
+      <div class="approach-list">
+        <div class="approach-row">
+          <span class="approach-num mono">01</span>
+          <div>
+            <h3>The relationship comes first</h3>
+            <p>Research consistently shows the therapeutic relationship is one of the strongest predictors
+              of successful therapy, so sessions are built to feel human, not clinical.</p>
+          </div>
         </div>
-        <div class="approach-item">
-          <h3>Education &amp; evidence</h3>
-          <p>Work is grounded in psychodynamic, CBT, ACT, mindfulness, and attachment/family-systems
-            approaches, explained in plain language, not jargon.</p>
+        <div class="approach-row">
+          <span class="approach-num mono">02</span>
+          <div>
+            <h3>Education &amp; evidence</h3>
+            <p>Work is grounded in psychodynamic, CBT, ACT, mindfulness, and attachment/family-systems
+              approaches, explained in plain language, not jargon.</p>
+          </div>
         </div>
-        <div class="approach-item">
-          <h3>Humor has a place here</h3>
-          <p>There's room for depth and lightness in the same session. Well-timed humor builds connection
-            and shifts perspective on even the hardest material.</p>
+        <div class="approach-row">
+          <span class="approach-num mono">03</span>
+          <div>
+            <h3>Humor has a place here</h3>
+            <p>There's room for depth and lightness in the same session. Well-timed humor builds connection
+              and shifts perspective on even the hardest material.</p>
+          </div>
         </div>
-        <div class="approach-item">
-          <h3>Every client makes sense</h3>
-          <p>Even the most frustrating patterns make sense in the context of a person's lived experience.
-            Understanding the "why" is the first step toward lasting change.</p>
+        <div class="approach-row">
+          <span class="approach-num mono">04</span>
+          <div>
+            <h3>Every client makes sense</h3>
+            <p>Even the most frustrating patterns make sense in the context of a person's lived experience.
+              Understanding the "why" is the first step toward lasting change.</p>
+          </div>
         </div>
-        <div class="approach-item">
-          <h3>Cultural humility</h3>
-          <p>Conversations about identity, culture, and context are approached with humility and openness:
-            how culture, race, ethnicity, religion, gender, sexual orientation, and migration history shape
-            the way a person understands themselves and the world.</p>
+        <div class="approach-row">
+          <span class="approach-num mono">05</span>
+          <div>
+            <h3>Cultural humility</h3>
+            <p>Conversations about identity, culture, and context are approached with humility and openness:
+              how culture, race, ethnicity, religion, gender, sexual orientation, and migration history shape
+              the way a person understands themselves and the world.</p>
+          </div>
         </div>
       </div>
     </div>

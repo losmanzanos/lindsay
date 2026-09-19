@@ -374,33 +374,23 @@
   .service-row.soon .service-tag{color:var(--gold);}
 
   /* -------------------- approach -------------------- */
-  .approach-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);
-    gap:0;border-top:1px solid var(--line-inv);
+  /* A single-column numbered list rather than a grid: with five principles,
+     a two-column grid always leaves one item stranded alone in the last row.
+     Numbering it like the Getting Started steps reads as deliberate at any count. */
+  .approach-list{border-top:1px solid var(--line-inv);}
+  .approach-row{
+    display:grid;grid-template-columns:64px 1fr;gap:1.8rem;
+    padding:2.1rem 0;border-bottom:1px solid var(--line-inv);
   }
-  .approach-item{
-    padding:2.1rem 2.2rem 2.1rem 0;border-bottom:1px solid var(--line-inv);
+  .approach-num{
+    font-family:"DM Sans", "Segoe UI", system-ui, sans-serif;font-weight:500;
+    color:var(--gold);font-size:0.85rem;letter-spacing:0.04em;padding-top:0.3rem;
   }
-  .approach-item:nth-child(odd){border-right:1px solid var(--line-inv);padding-right:2.4rem;}
-  .approach-item:nth-child(even){padding-left:2.4rem;}
-  /* When the grid holds an odd number of items, the last one would sit alone
-     in the left column with a dangling empty cell beside it. Instead of
-     letting it look like a broken row, give it its own centered, full-width
-     treatment so it reads as a deliberate closing point, not a leftover. */
-  .approach-item:last-child:nth-child(odd){
-    grid-column:1/-1;border-right:none;border-top:1px solid var(--line-inv);
-    padding:2.3rem 0 2.1rem;text-align:center;
-  }
-  .approach-item:last-child:nth-child(odd) p{margin:0 auto;}
-  .approach-bullet{
-    width:7px;height:7px;background:var(--gold-bright);border-radius:50%;
-    display:inline-block;margin-bottom:0.9rem;
-  }
-  .approach-item h3{
+  .approach-row h3{
     font-family:"Fraunces",serif;font-weight:500;font-size:1.28rem;color:var(--paper);
     margin-bottom:0.55rem;
   }
-  .approach-item p{margin:0;color:var(--ink-soft-inv);font-size:0.95rem;max-width:42ch;}
+  .approach-row p{margin:0;color:var(--ink-soft-inv);font-size:0.95rem;max-width:52ch;}
 
   /* -------------------- specialties -------------------- */
   .tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-top:2.4rem;}
@@ -526,9 +516,7 @@
     .about-grid{grid-template-columns:1fr;}
     .service-row{grid-template-columns:1fr;gap:0.6rem;}
     .service-tag{padding-top:0;}
-    .approach-grid{grid-template-columns:1fr;}
-    .approach-item:nth-child(odd){border-right:none;padding-right:0;}
-    .approach-item:nth-child(even){padding-left:0;}
+    .approach-row{grid-template-columns:1fr;gap:0.5rem;padding:1.7rem 0;}
     .steps{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;gap:2.2rem;}
     .final-cta-simple{flex-direction:column;align-items:flex-start;}
@@ -616,9 +604,6 @@
     content:"";position:absolute;left:0;top:0.55em;width:6px;height:6px;
     background:var(--gold);border-radius:50%;
   }
-  /* An odd-numbered list would leave its last line alone in the left column
-     with a dangling gap beside it; let it run the full row instead. */
-  .check-list li:last-child:nth-child(odd){grid-column:1/-1;}
   @media (max-width:600px){.check-list{grid-template-columns:1fr;}}
 </style>
 </head>
