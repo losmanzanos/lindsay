@@ -48,7 +48,6 @@ about_main = '''<main id="top">
       <div>
         <div class="headshot-wrap">
           <img src="/images/lindsay-headshot.jpg" alt="Dr. Lindsay Rosen, licensed clinical psychologist, in her Denver office" loading="lazy">
-          <p class="headshot-note">Photos above and below are placeholders while new ones are scheduled, not final.</p>
         </div>
         <p class="eyebrow">About Dr. Rosen</p>
         <h2 style="margin-top:1rem;">Training that runs deep.<br>A bedside manner that doesn't feel like one.</h2>
@@ -118,7 +117,6 @@ about_main = '''<main id="top">
         <div><img src="/images/office-bookshelf.jpg" alt="Antique painted bookshelf with books and decor" loading="lazy"></div>
         <div><img src="/images/office-diplomas.jpg" alt="Desk with framed diplomas from University of Denver, Tufts, and University of Miami" loading="lazy"></div>
       </div>
-      <p class="photo-grid-note">Placeholder photos while new ones are scheduled, not final.</p>
     </div>
   </section>
 
