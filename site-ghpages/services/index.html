@@ -648,6 +648,7 @@
   }
   .form-field input:focus, .form-field textarea:focus{border-color:var(--gold);}
   .form-field textarea{min-height:5.5em;}
+  .hp-field{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;}
   .form-note{font-size:0.78rem;line-height:1.55;color:var(--ink-soft);max-width:40ch;}
   .form-actions{margin-top:0.2rem;}
   .form-status{font-size:0.85rem;color:var(--ink-soft);margin-top:0.2rem;min-height:1.2em;}
@@ -690,6 +691,7 @@
     margin-bottom:0.65rem;font-style:normal;line-height:1.5;
   }
   .footer-col a:hover{color:var(--gold-bright);}
+  .pt-seal{margin-top:1.5rem;min-height:46px;}
   .footer-site-links{columns:2;column-gap:2.5rem;}
   .footer-site-links a{break-inside:avoid;}
   .office-clock{margin-top:1.6rem !important;font-size:0.82rem !important;line-height:1.7;color:var(--ink-soft-inv);}
@@ -743,7 +745,7 @@
     .hero-footnote{font-size:0.66rem;}
   }
 
-  /* True phone widths: don't force a single-viewport fit — let it breathe and scroll
+  /* True phone widths: don't force a single-viewport fit, let it breathe and scroll
      naturally instead, with clean full-width stacked buttons instead of an awkward wrap. */
   @media (max-width: 600px){
     .hero{min-height:0;padding:1.4rem 0 2.8rem;}
@@ -1015,6 +1017,12 @@
           <span class="brand-sub" style="display:block;margin-top:0.2rem;">Dr. Lindsay Rosen, PSY.D</span>
           <p>Psychotherapy for adolescents and adults, and psychological assessment, in Denver, Colorado
             and by telehealth across the country.</p>
+          <div class="pt-seal">
+            <!-- Professional verification provided by Psychology Today. The link must sit directly before the script. -->
+            <a href="https://www.psychologytoday.com/profile/906183" class="sx-verified-seal" aria-label="Verified by Psychology Today" target="_blank" rel="noopener"></a>
+            <script type="text/javascript" src="https://member.psychologytoday.com/verified-seal.js" data-badge="13" data-id="906183" data-code="aHR0cHM6Ly93d3cucHN5Y2hvbG9neXRvZGF5LmNvbS9hcGkvdmVyaWZpZWQtc2VhbC9zZWFscy8xMy9wcm9maWxlLzkwNjE4Mz9jYWxsYmFjaz1zeGNhbGxiYWNr"></script>
+            <!-- End Verification -->
+          </div>
           <p class="office-clock" id="officeClock" hidden></p>
         </div>
         <div class="footer-col">
@@ -1131,31 +1139,58 @@
   var form = document.getElementById('contactForm');
   var status = document.getElementById('cfStatus');
   if(!form || !status) return;
+  // Filled in per build target by build.py. Empty = no EmailJS, use the email app.
+  var TO = 'dahc.reverse@gmail.com';
+  var EJS = { key: '', service: '', template: '' };
+  var useEmailJS = !!(EJS.key && EJS.service && EJS.template);
+  var button = form.querySelector('button[type="submit"]');
+
+  function viaEmailApp(name, email, phone, message){
+    var subject = 'New consultation request from ' + name;
+    var body = ['Name: ' + name, 'Email: ' + email, 'Phone: ' + (phone || 'n/a'), '', message].join('\n');
+    window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var name = form.name.value.trim();
     var email = form.email.value.trim();
     var phone = form.phone.value.trim();
     var message = form.message.value.trim();
+    if(form.website && form.website.value){           // hidden spam trap: people never see it
+      status.textContent = 'Thank you. Your message was sent.'; form.reset(); return;
+    }
     if(!name || !email || !message){
       status.textContent = 'Please fill in your name, email, and a short message.';
       return;
     }
-    var subject = 'New consultation request from ' + name;
-    var bodyLines = [
-      'Name: ' + name,
-      'Email: ' + email,
-      'Phone: ' + (phone || 'n/a'),
-      '',
-      message
-    ];
-    // PREVIEW BUILD: routed to Chad for review, not Lindsay. Change this address
-    // to lindsay@rosenpsych.com before this site actually goes live.
-    var mailto = 'mailto:dahc.reverse@gmail.com'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-    window.location.href = mailto;
-    status.textContent = 'Opening your email app to send this message…';
+    if(!useEmailJS){
+      viaEmailApp(name, email, phone, message);
+      status.textContent = 'Opening your email app to send this message…';
+      return;
+    }
+    var sentAt = '';
+    try { sentAt = new Intl.DateTimeFormat('en-US',{dateStyle:'medium',timeStyle:'short',timeZone:'America/Denver'}).format(new Date()) + ' (Denver time)'; } catch(err){}
+    if(button) button.disabled = true;
+    status.textContent = 'Sending…';
+    fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        service_id: EJS.service, template_id: EJS.template, user_id: EJS.key,
+        template_params: {
+          name: name, first_name: name.split(/\s+/)[0], email: email, reply_to: email, phone: phone || 'Not given',
+          message: message, page: window.location.pathname, sent_at: sentAt
+        }
+      })
+    }).then(function(r){
+      if(!r.ok) throw new Error('EmailJS ' + r.status);
+      form.reset();
+      status.textContent = 'Thank you. Your message was sent, and a confirmation is on its way to your inbox.';
+    }).catch(function(){
+      status.textContent = 'That didn’t go through, so your email app is opening instead. Nothing you typed is lost.';
+      viaEmailApp(name, email, phone, message);
+    }).then(function(){ if(button) button.disabled = false; });
   });
 })();
 
