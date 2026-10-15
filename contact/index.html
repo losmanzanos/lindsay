@@ -592,6 +592,41 @@
   }
   .approach-row p{margin:0;color:var(--charcoal);font-size:0.98rem;max-width:52ch;}
   .approach-row > div{display:contents;}
+  .approach-row .approach-body p{margin:0 0 1rem;}
+  .approach-row .approach-body p:last-child{margin-bottom:0;}
+  .approach-body .modality-list{margin-top:0.6rem;}
+  .approach-row .step-link{margin-top:1.1rem;}
+  .step-link a{font-size:0.9rem;text-decoration:none;color:var(--navy);border-bottom:1px solid var(--oak);padding-bottom:2px;}
+  .step-link a:hover{border-bottom-color:var(--mustard);}
+
+  /* -------------------- photos placed through the pages -------------------- */
+  .side-photo{margin:2.4rem 0 0;max-width:380px;}
+  .side-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;}
+  .side-photo--inset{margin-left:clamp(0rem,3vw,2.6rem);max-width:330px;}
+  .side-photo figcaption{margin-top:0.9rem;font-family:"Fraunces", serif;font-style:italic;font-size:1.05rem;line-height:1.4;color:var(--ink-soft);}
+  /* rows of photos that share one height; each figure's --r is its width/height */
+  .photo-row{display:flex;gap:0.9rem;align-items:flex-start;}
+  .photo-row figure{margin:0;flex:var(--r) 1 0;min-width:0;}
+  .photo-row img{display:block;width:100%;aspect-ratio:var(--r);object-fit:cover;border-radius:2px;}
+
+  /* the office: panels that open one at a time */
+  .photo-accordion{display:flex;gap:0.55rem;height:clamp(380px,40vw,540px);margin-top:2.2rem;}
+  .pa-panel{flex:1 1 0;min-width:0;position:relative;padding:0;border:0;margin:0;background:#1b2730;
+    overflow:hidden;cursor:pointer;border-radius:2px;transition:flex-grow .65s cubic-bezier(.2,.7,.2,1);}
+  .pa-panel img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8) brightness(.78);transition:filter .65s ease;}
+  .pa-panel.is-open{flex-grow:6.5;cursor:default;}
+  .pa-panel.is-open img{filter:none;}
+  .pa-panel:focus-visible{outline:2px solid var(--mustard);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){.pa-panel,.pa-panel img{transition:none;}}
+  @media (max-width:760px){
+    .side-photo,.side-photo--inset{max-width:420px;margin:1.8rem 0 0;}
+    .photo-row{flex-direction:column;gap:0.7rem;}
+    .photo-row figure{flex:none;width:100%;}
+    .photo-accordion{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;gap:0.6rem;padding-bottom:0.6rem;}
+    .pa-panel,.pa-panel.is-open{flex:0 0 78%;height:420px;scroll-snap-align:start;cursor:default;}
+    .pa-panel img{filter:none;}
+  }
+  .about-body .body-h3{font-family:"Fraunces", serif;font-weight:400;font-size:clamp(1.25rem,2vw,1.5rem);color:var(--navy);margin:2.4rem 0 0;}
 
   /* -------------------- specialties -------------------- */
   .tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:0.2rem 0;margin-top:2.4rem;
@@ -876,8 +911,7 @@
           <div class="nav-dropdown-panel-inner">
             <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
             <a href="/lindsay/services/individual-therapy/">Individual Adult Therapy</a>
-            <a href="/lindsay/services/motherhood/">Motherhood</a>
-            <a href="/lindsay/services/fatherhood/">Fatherhood</a>
+            <a href="/lindsay/services/new-and-expecting-parents/">New & Expecting Parents</a>
             <a href="/lindsay/services/consultation/">Consultation</a>
             <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
           </div>
@@ -901,8 +935,7 @@
       <a href="/lindsay/services/">Services</a>
       <a href="/lindsay/services/adolescent-therapy/" class="mobile-nav-sub">Adolescent Therapy</a>
       <a href="/lindsay/services/individual-therapy/" class="mobile-nav-sub">Individual Adult Therapy</a>
-      <a href="/lindsay/services/motherhood/" class="mobile-nav-sub">Motherhood</a>
-      <a href="/lindsay/services/fatherhood/" class="mobile-nav-sub">Fatherhood</a>
+      <a href="/lindsay/services/new-and-expecting-parents/" class="mobile-nav-sub">New & Expecting Parents</a>
       <a href="/lindsay/services/consultation/" class="mobile-nav-sub">Consultation</a>
       <a href="/lindsay/services/psychological-assessment/" class="mobile-nav-sub">Psychological Assessment</a>
       <a href="/lindsay/approach/">Approach</a>
@@ -920,7 +953,7 @@
         <h2 style="margin-top:1rem;font-size:clamp(2.1rem,4.2vw,3.2rem);">Get in touch.</h2>
         <p>Send a note below and we'll find a time for a free 15-minute call.</p>
         <figure class="contact-photo">
-          <img src="/lindsay/images/stock-shadow-wall.jpg" alt="Soft afternoon shadow of a flower stem on a warm plaster wall" loading="lazy">
+          <img src="/lindsay/images/photo-tray.jpg" alt="A candle and a patterned mug on a tray in Dr. Rosen's office" loading="lazy">
         </figure>
       </div>
       <div class="contact-right">
@@ -1001,6 +1034,7 @@
             <a href="/lindsay/services/">Services</a>
             <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
             <a href="/lindsay/services/individual-therapy/">Individual Adult Therapy</a>
+            <a href="/lindsay/services/new-and-expecting-parents/">New &amp; Expecting Parents</a>
             <a href="/lindsay/services/consultation/">Consultation</a>
             <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
             <a href="/lindsay/approach/">Approach</a>
@@ -1200,6 +1234,24 @@
     entries.forEach(function(e){ if(e.isIntersecting){ v.classList.remove('is-apart'); io.disconnect(); } });
   }, {threshold: 0.45});
   io.observe(v);
+})();
+(function(){
+  var accs = document.querySelectorAll('[data-accordion]');
+  Array.prototype.forEach.call(accs, function(acc){
+    var panels = acc.querySelectorAll('.pa-panel');
+    function open(p){
+      Array.prototype.forEach.call(panels, function(x){
+        var on = (x === p);
+        x.classList.toggle('is-open', on);
+        x.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+    }
+    Array.prototype.forEach.call(panels, function(p){
+      p.addEventListener('mouseenter', function(){ open(p); });
+      p.addEventListener('focus', function(){ open(p); });
+      p.addEventListener('click', function(){ open(p); });
+    });
+  });
 })();
 </script>
 

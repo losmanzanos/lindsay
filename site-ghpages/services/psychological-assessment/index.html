@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Psychological assessment services from Dr. Lindsay Rosen, PsyD, launching January 2027 in Denver, CO.">
+<meta name="description" content="Psychological assessment for ages 4 through adulthood with Dr. Lindsay Rosen, PsyD, in Denver, CO. Testing, interpretation, and practical recommendations, coming early 2027.">
 <link rel="canonical" href="/lindsay/services/psychological-assessment/">
 <link rel="icon" type="image/svg+xml" href="/lindsay/images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/lindsay/images/favicon-32.png">
@@ -592,6 +592,41 @@
   }
   .approach-row p{margin:0;color:var(--charcoal);font-size:0.98rem;max-width:52ch;}
   .approach-row > div{display:contents;}
+  .approach-row .approach-body p{margin:0 0 1rem;}
+  .approach-row .approach-body p:last-child{margin-bottom:0;}
+  .approach-body .modality-list{margin-top:0.6rem;}
+  .approach-row .step-link{margin-top:1.1rem;}
+  .step-link a{font-size:0.9rem;text-decoration:none;color:var(--navy);border-bottom:1px solid var(--oak);padding-bottom:2px;}
+  .step-link a:hover{border-bottom-color:var(--mustard);}
+
+  /* -------------------- photos placed through the pages -------------------- */
+  .side-photo{margin:2.4rem 0 0;max-width:380px;}
+  .side-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;}
+  .side-photo--inset{margin-left:clamp(0rem,3vw,2.6rem);max-width:330px;}
+  .side-photo figcaption{margin-top:0.9rem;font-family:"Fraunces", serif;font-style:italic;font-size:1.05rem;line-height:1.4;color:var(--ink-soft);}
+  /* rows of photos that share one height; each figure's --r is its width/height */
+  .photo-row{display:flex;gap:0.9rem;align-items:flex-start;}
+  .photo-row figure{margin:0;flex:var(--r) 1 0;min-width:0;}
+  .photo-row img{display:block;width:100%;aspect-ratio:var(--r);object-fit:cover;border-radius:2px;}
+
+  /* the office: panels that open one at a time */
+  .photo-accordion{display:flex;gap:0.55rem;height:clamp(380px,40vw,540px);margin-top:2.2rem;}
+  .pa-panel{flex:1 1 0;min-width:0;position:relative;padding:0;border:0;margin:0;background:#1b2730;
+    overflow:hidden;cursor:pointer;border-radius:2px;transition:flex-grow .65s cubic-bezier(.2,.7,.2,1);}
+  .pa-panel img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8) brightness(.78);transition:filter .65s ease;}
+  .pa-panel.is-open{flex-grow:6.5;cursor:default;}
+  .pa-panel.is-open img{filter:none;}
+  .pa-panel:focus-visible{outline:2px solid var(--mustard);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){.pa-panel,.pa-panel img{transition:none;}}
+  @media (max-width:760px){
+    .side-photo,.side-photo--inset{max-width:420px;margin:1.8rem 0 0;}
+    .photo-row{flex-direction:column;gap:0.7rem;}
+    .photo-row figure{flex:none;width:100%;}
+    .photo-accordion{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;gap:0.6rem;padding-bottom:0.6rem;}
+    .pa-panel,.pa-panel.is-open{flex:0 0 78%;height:420px;scroll-snap-align:start;cursor:default;}
+    .pa-panel img{filter:none;}
+  }
+  .about-body .body-h3{font-family:"Fraunces", serif;font-weight:400;font-size:clamp(1.25rem,2vw,1.5rem);color:var(--navy);margin:2.4rem 0 0;}
 
   /* -------------------- specialties -------------------- */
   .tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:0.2rem 0;margin-top:2.4rem;
@@ -868,8 +903,7 @@
           <div class="nav-dropdown-panel-inner">
             <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
             <a href="/lindsay/services/individual-therapy/">Individual Adult Therapy</a>
-            <a href="/lindsay/services/motherhood/">Motherhood</a>
-            <a href="/lindsay/services/fatherhood/">Fatherhood</a>
+            <a href="/lindsay/services/new-and-expecting-parents/">New & Expecting Parents</a>
             <a href="/lindsay/services/consultation/">Consultation</a>
             <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
           </div>
@@ -893,8 +927,7 @@
       <a href="/lindsay/services/">Services</a>
       <a href="/lindsay/services/adolescent-therapy/" class="mobile-nav-sub">Adolescent Therapy</a>
       <a href="/lindsay/services/individual-therapy/" class="mobile-nav-sub">Individual Adult Therapy</a>
-      <a href="/lindsay/services/motherhood/" class="mobile-nav-sub">Motherhood</a>
-      <a href="/lindsay/services/fatherhood/" class="mobile-nav-sub">Fatherhood</a>
+      <a href="/lindsay/services/new-and-expecting-parents/" class="mobile-nav-sub">New & Expecting Parents</a>
       <a href="/lindsay/services/consultation/" class="mobile-nav-sub">Consultation</a>
       <a href="/lindsay/services/psychological-assessment/" class="mobile-nav-sub">Psychological Assessment</a>
       <a href="/lindsay/approach/">Approach</a>
@@ -909,29 +942,47 @@
     <div class="wrap page-hero-grid">
       <div class="page-hero-text">
         <a class="back-link" href="/lindsay/services/">&larr; All services</a>
-      <p class="eyebrow">Psychological Assessment &middot; Launching January 2027</p>
-      <h1 style="font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:19ch;margin-top:1rem;">Grounded in the same<br><em>doctoral training.</em></h1>
-      <p class="hero-sub" style="margin-top:1.1rem;max-width:56ch;">Psychological assessment draws on the same doctoral training as Dr. Rosen's clinical work,
-        and a fuller assessment practice is planned to launch in January 2027. This page will be updated
-        with real offerings once it's ready; for now, here's what to expect, and how to get on the waitlist.</p>
+      <p class="eyebrow">Psychological Assessment &middot; Coming Early 2027</p>
+      <h1 style="font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:19ch;margin-top:1rem;">Good data matters.<br><em>So does knowing what to make of it.</em></h1>
+      <p class="hero-sub" style="margin-top:1.1rem;max-width:56ch;">Psychological assessment combines scientifically validated, standardized
+        testing with clinical interviews, behavioral observations, and personal history to provide a deeper understanding
+        of how someone thinks, learns, feels, and functions.</p>
+      <div class="hero-actions" style="margin-top:1.6rem;">
+        <a class="btn btn-primary" href="/lindsay/contact/">Join the waitlist</a>
       </div>
-      <figure class="page-hero-photo"><img src="/lindsay/images/stock-olive-branch.jpg" alt="A cut olive branch resting on a white table"></figure>
+      </div>
+      <figure class="page-hero-photo"><img src="/lindsay/images/photo-tile.jpg" alt="Close-up of the patterned tile around the fireplace in Dr. Rosen's office"></figure>
     </div>
   </section>
 
   <section class="on-paper band-tight" style="background:var(--paper-2);">
     <div class="wrap about-grid">
       <div>
-        <p class="eyebrow">Why assessment</p>
-        <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:15ch;">Why an assessment can help.</h2>
+        <figure class="side-photo" style="margin-top:0;"><img src="/lindsay/images/photo-diplomas.jpg" alt="Dr. Rosen's framed diplomas from Tufts, the University of Denver, and the University of Miami" loading="lazy"></figure>
       </div>
       <div class="about-body">
-        <p>Therapy is often about process, working through something over time. Assessment is different:
-          it's a structured way of answering a specific question about how someone thinks, learns, or
-          functions, with more rigor than a conversation alone can provide.</p>
-        <p>As the practice grows, a formal assessment offering is planned for January 2027, and it will be
-          announced here first. In the meantime, Dr. Rosen offers <a href="/lindsay/services/consultation/" style="color:var(--ink);border-bottom:1px solid var(--gold);text-decoration:none;">consultation</a>
-          for anyone who wants help making sense of an evaluation they've already completed.</p>
+        <p>Dr. Rosen brings over a decade of experience conducting psychological assessments across research,
+          school, hospital, community mental health, and private practice settings. Much of her doctoral training
+          was devoted specifically to developing expertise in psychological testing, interpretation, and
+          diagnostic evaluation.</p>
+        <p>Her approach emphasizes both the precision of objective data and the importance of understanding the
+          whole person. The goal is to provide diagnostic clarity, identify meaningful patterns of strengths and
+          difficulties, and offer practical recommendations that can make a difference in everyday life.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-paper band-tight">
+    <div class="wrap about-grid">
+      <div>
+        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:14ch;">Assessment for Ages 4 Through Adulthood</h2>
+      </div>
+      <div class="about-body">
+        <p>Dr. Rosen's combined training in developmental psychology and psychological assessment gives her a
+          strong foundation for evaluating individuals across the lifespan. Her understanding of how cognitive
+          abilities, emotional functioning, and developmental expectations change with age informs both the
+          selection and interpretation of assessment measures. This allows her to consider not only how someone is functioning, but how their abilities and
+          challenges fit within their particular stage of development.</p>
       </div>
     </div>
   </section>
@@ -942,7 +993,7 @@
         <p class="eyebrow">Want to be notified?</p>
         <h2 style="margin-top:1rem;">Get on the waitlist.</h2>
         <p style="color:var(--ink-soft);max-width:36ch;margin-top:1rem;">Send a note and you'll hear first
-          when assessment services are ready to book in January 2027.</p>
+          when assessment services are ready to book in early 2027.</p>
       </div>
       <a class="btn btn-primary" href="/lindsay/contact/" style="padding:1.05em 1.9em;font-size:0.9rem;">Join the waitlist</a>
     </div>
@@ -984,6 +1035,7 @@
             <a href="/lindsay/services/">Services</a>
             <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
             <a href="/lindsay/services/individual-therapy/">Individual Adult Therapy</a>
+            <a href="/lindsay/services/new-and-expecting-parents/">New &amp; Expecting Parents</a>
             <a href="/lindsay/services/consultation/">Consultation</a>
             <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
             <a href="/lindsay/approach/">Approach</a>
@@ -1183,6 +1235,24 @@
     entries.forEach(function(e){ if(e.isIntersecting){ v.classList.remove('is-apart'); io.disconnect(); } });
   }, {threshold: 0.45});
   io.observe(v);
+})();
+(function(){
+  var accs = document.querySelectorAll('[data-accordion]');
+  Array.prototype.forEach.call(accs, function(acc){
+    var panels = acc.querySelectorAll('.pa-panel');
+    function open(p){
+      Array.prototype.forEach.call(panels, function(x){
+        var on = (x === p);
+        x.classList.toggle('is-open', on);
+        x.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+    }
+    Array.prototype.forEach.call(panels, function(p){
+      p.addEventListener('mouseenter', function(){ open(p); });
+      p.addEventListener('focus', function(){ open(p); });
+      p.addEventListener('click', function(){ open(p); });
+    });
+  });
 })();
 </script>
 

@@ -592,6 +592,41 @@
   }
   .approach-row p{margin:0;color:var(--charcoal);font-size:0.98rem;max-width:52ch;}
   .approach-row > div{display:contents;}
+  .approach-row .approach-body p{margin:0 0 1rem;}
+  .approach-row .approach-body p:last-child{margin-bottom:0;}
+  .approach-body .modality-list{margin-top:0.6rem;}
+  .approach-row .step-link{margin-top:1.1rem;}
+  .step-link a{font-size:0.9rem;text-decoration:none;color:var(--navy);border-bottom:1px solid var(--oak);padding-bottom:2px;}
+  .step-link a:hover{border-bottom-color:var(--mustard);}
+
+  /* -------------------- photos placed through the pages -------------------- */
+  .side-photo{margin:2.4rem 0 0;max-width:380px;}
+  .side-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px;}
+  .side-photo--inset{margin-left:clamp(0rem,3vw,2.6rem);max-width:330px;}
+  .side-photo figcaption{margin-top:0.9rem;font-family:"Fraunces", serif;font-style:italic;font-size:1.05rem;line-height:1.4;color:var(--ink-soft);}
+  /* rows of photos that share one height; each figure's --r is its width/height */
+  .photo-row{display:flex;gap:0.9rem;align-items:flex-start;}
+  .photo-row figure{margin:0;flex:var(--r) 1 0;min-width:0;}
+  .photo-row img{display:block;width:100%;aspect-ratio:var(--r);object-fit:cover;border-radius:2px;}
+
+  /* the office: panels that open one at a time */
+  .photo-accordion{display:flex;gap:0.55rem;height:clamp(380px,40vw,540px);margin-top:2.2rem;}
+  .pa-panel{flex:1 1 0;min-width:0;position:relative;padding:0;border:0;margin:0;background:#1b2730;
+    overflow:hidden;cursor:pointer;border-radius:2px;transition:flex-grow .65s cubic-bezier(.2,.7,.2,1);}
+  .pa-panel img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.8) brightness(.78);transition:filter .65s ease;}
+  .pa-panel.is-open{flex-grow:6.5;cursor:default;}
+  .pa-panel.is-open img{filter:none;}
+  .pa-panel:focus-visible{outline:2px solid var(--mustard);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){.pa-panel,.pa-panel img{transition:none;}}
+  @media (max-width:760px){
+    .side-photo,.side-photo--inset{max-width:420px;margin:1.8rem 0 0;}
+    .photo-row{flex-direction:column;gap:0.7rem;}
+    .photo-row figure{flex:none;width:100%;}
+    .photo-accordion{height:auto;overflow-x:auto;scroll-snap-type:x mandatory;gap:0.6rem;padding-bottom:0.6rem;}
+    .pa-panel,.pa-panel.is-open{flex:0 0 78%;height:420px;scroll-snap-align:start;cursor:default;}
+    .pa-panel img{filter:none;}
+  }
+  .about-body .body-h3{font-family:"Fraunces", serif;font-weight:400;font-size:clamp(1.25rem,2vw,1.5rem);color:var(--navy);margin:2.4rem 0 0;}
 
   /* -------------------- specialties -------------------- */
   .tag-cloud{display:flex;flex-wrap:wrap;justify-content:center;gap:0.2rem 0;margin-top:2.4rem;
@@ -868,8 +903,7 @@
           <div class="nav-dropdown-panel-inner">
             <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
             <a href="/lindsay/services/individual-therapy/">Individual Adult Therapy</a>
-            <a href="/lindsay/services/motherhood/">Motherhood</a>
-            <a href="/lindsay/services/fatherhood/">Fatherhood</a>
+            <a href="/lindsay/services/new-and-expecting-parents/">New & Expecting Parents</a>
             <a href="/lindsay/services/consultation/">Consultation</a>
             <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
           </div>
@@ -893,8 +927,7 @@
       <a href="/lindsay/services/">Services</a>
       <a href="/lindsay/services/adolescent-therapy/" class="mobile-nav-sub">Adolescent Therapy</a>
       <a href="/lindsay/services/individual-therapy/" class="mobile-nav-sub">Individual Adult Therapy</a>
-      <a href="/lindsay/services/motherhood/" class="mobile-nav-sub">Motherhood</a>
-      <a href="/lindsay/services/fatherhood/" class="mobile-nav-sub">Fatherhood</a>
+      <a href="/lindsay/services/new-and-expecting-parents/" class="mobile-nav-sub">New & Expecting Parents</a>
       <a href="/lindsay/services/consultation/" class="mobile-nav-sub">Consultation</a>
       <a href="/lindsay/services/psychological-assessment/" class="mobile-nav-sub">Psychological Assessment</a>
       <a href="/lindsay/approach/">Approach</a>
@@ -910,16 +943,17 @@
       <div class="page-hero-text">
         <a class="back-link" href="/lindsay/services/">&larr; All services</a>
       <p class="eyebrow">Individual Adult Therapy &middot; Ages 18+</p>
-      <h1 style="font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:20ch;margin-top:1rem;">For the parts of life<br><em>that don't fit a checklist.</em></h1>
-      <p class="hero-sub" style="margin-top:1.1rem;max-width:56ch;">Many of the people Dr. Rosen works with are high-functioning on the outside but feel
-        overwhelmed, stuck, or disconnected internally. Individual therapy for adults, grounded in
-        understanding your history, not just your symptoms.</p>
+      <h1 style="font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:20ch;margin-top:1rem;">A deeper understanding of yourself.<br><em>A different way forward.</em></h1>
+      <p class="hero-sub" style="margin-top:1.1rem;max-width:58ch;">Many of the adults Dr. Rosen works with are high functioning on the outside but feel
+        overwhelmed, stuck, or disconnected internally. Her approach looks beyond symptoms to understand the
+        experiences, relationships, and patterns that have shaped how you feel. Understanding these patterns
+        can help create meaningful change.</p>
       <div class="hero-actions" style="margin-top:1.6rem;">
         <a class="btn btn-primary" href="/lindsay/contact/">Schedule a free consultation</a>
-        <a class="btn btn-ghost" href="/lindsay/getting-started/">How sessions work</a>
+        <a class="btn btn-ghost" href="#getting-started">Getting Started</a>
       </div>
       </div>
-      <figure class="page-hero-photo"><img src="/lindsay/images/stock-mug-window.jpg" alt="A mug resting on a stack of books on a sunlit windowsill" style="object-position:center 78%;"></figure>
+      <figure class="page-hero-photo"><img src="/lindsay/images/photo-sofa-tissues.jpg" alt="The sofa in Dr. Rosen's office, with a box of tissues on the coffee table" style="object-position:center 70%;"></figure>
     </div>
   </section>
 
@@ -927,7 +961,6 @@
     <div class="wrap">
       <div class="section-head">
         <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">Areas of focus</h2>
-        <p>Different presentations, same underlying approach.</p>
       </div>
       <div class="service-list">
         <div class="service-row">
@@ -939,56 +972,87 @@
         <div class="service-row">
           <h3 style="font-size:1.35rem;">Life transitions &amp; uncertainty</h3>
           <span class="service-tag"></span>
-          <p>Support through the demands and self-reflection that come with major change: graduating
-            college, moving to a new place, the end or start of a relationship, being between jobs, or
-            getting engaged.</p>
+          <p>Support through the demands and self-reflection that come with major change: graduating college,
+            moving somewhere new, changing careers, beginning or ending a relationship, getting married, or
+            simply not knowing what comes next.</p>
         </div>
         <div class="service-row">
           <h3 style="font-size:1.35rem;">Relationship patterns</h3>
           <span class="service-tag"></span>
-          <p>Feeling disconnected, or caught in patterns that keep you from being happy: chronic people
-            pleasing, difficulty asserting yourself, or needs that consistently go unmet.</p>
+          <p>Feeling disconnected or caught in patterns that keep getting in the way, chronic people pleasing,
+            difficulty asserting yourself, or needs that consistently go unmet.</p>
         </div>
         <div class="service-row">
-          <h3 style="font-size:1.35rem;"><a href="/lindsay/services/motherhood/" style="text-decoration:none;color:inherit;">New &amp; expecting mothers</a></h3>
+          <h3 style="font-size:1.35rem;"><a href="/lindsay/services/new-and-expecting-parents/" style="text-decoration:none;color:inherit;">New &amp; expecting parents</a></h3>
           <span class="service-tag"></span>
-          <p>Support through pregnancy, postpartum, and the transition to motherhood, including the
-            feelings that don't match what it was "supposed" to feel like. <a href="/lindsay/services/motherhood/">Read more &rarr;</a></p>
-        </div>
-        <div class="service-row">
-          <h3 style="font-size:1.35rem;"><a href="/lindsay/services/fatherhood/" style="text-decoration:none;color:inherit;">New &amp; expecting fathers</a></h3>
-          <span class="service-tag"></span>
-          <p>Support for new fathers navigating competing demands, identity change, and what it means to
-            show up as the partner and parent they want to be. <a href="/lindsay/services/fatherhood/">Read more &rarr;</a></p>
+          <p>Support through pregnancy, postpartum, and the transition to parenthood. A place to adjust to the
+            new roles, changing relationships, competing demands, and the parts of parenthood that may feel
+            different than you imagined. <a href="/lindsay/services/new-and-expecting-parents/">Read more &rarr;</a></p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="on-paper band-tight">
+  <section class="on-paper" style="padding:clamp(3rem,6vw,4.5rem) 0 0;">
+    <div class="wrap photo-row">
+      <figure style="--r:1.499"><img src="/lindsay/images/photo-mantel-candle.jpg" alt="A candle and potted plants on the carved oak mantel in Dr. Rosen's office" loading="lazy"></figure>
+      <figure style="--r:0.714"><img src="/lindsay/images/office-shelf.jpg" alt="The painted antique bookshelf in Dr. Rosen's office" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="on-paper band-tight" id="getting-started">
     <div class="wrap">
       <div class="section-head">
-        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">What sessions look like</h2>
-        <p>The practical shape of the work, so nothing feels like a surprise.</p>
+        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">Getting Started</h2>
       </div>
-      <div class="service-list">
-        <div class="service-row">
-          <h3 style="font-size:1.35rem;">Format &amp; cadence</h3>
-          <span class="service-tag"></span>
-          <p>50-minute sessions, weekly or biweekly depending on what you're working through, in person at
-            the Denver office or by telehealth anywhere Dr. Rosen is licensed.</p>
+      <div class="approach-list">
+        <div class="approach-row">
+          <span class="approach-num mono">01</span>
+          <div>
+            <h3>Consultation call</h3>
+            <div class="approach-body">
+              <p>A free 15-minute call to talk about what brings you in, go over logistics, and answer any
+                questions. It's also a chance to get an initial feel for whether working together seems like a
+                good fit. No need to prepare anything before.</p>
+              <p class="step-link"><a href="/lindsay/contact/">Schedule a free consultation &rarr;</a></p>
+            </div>
+          </div>
         </div>
-        <div class="service-row">
-          <h3 style="font-size:1.35rem;">Approach</h3>
-          <span class="service-tag"></span>
-          <p>Psychodynamic, CBT, ACT, mindfulness, and attachment/family-systems approaches, drawn on as the
-            work calls for it rather than applied as a single fixed protocol, explained in plain language.</p>
+        <div class="approach-row">
+          <span class="approach-num mono">02</span>
+          <div>
+            <h3>Initial intake</h3>
+            <p>The first 50-minute session is a chance to understand your presenting concern and get to know
+              you. Dr. Rosen will ask about what brings you in, why now, and what you hope to get from therapy.
+              It's also okay if you don't know the answers to these questions. Dr. Rosen will guide the
+              conversation so you don't need to know exactly where to start.</p>
+          </div>
         </div>
-        <div class="service-row">
-          <h3 style="font-size:1.35rem;">Insurance</h3>
-          <span class="service-tag"></span>
-          <p>In-network with Lyra Health. For other plans, sessions are $205 for 50 minutes, with a
-            superbill available to submit for possible out-of-network reimbursement.</p>
+        <div class="approach-row">
+          <span class="approach-num mono">03</span>
+          <div>
+            <h3>Next 2&ndash;3 sessions</h3>
+            <p>These sessions may explore your history, relationships, important experiences, and the patterns
+              that have shaped how you see yourself and relate to others. You'll also get to know Dr. Rosen's
+              personality and style, and get a sense of whether working together feels comfortable.</p>
+          </div>
+        </div>
+        <div class="approach-row">
+          <span class="approach-num mono">04</span>
+          <div>
+            <h3>Making a plan</h3>
+            <p>After these initial sessions, Dr. Rosen will share what she's noticing and invite your
+              perspective on what feels most important to work on. Together, you'll agree on goals, how to
+              approach them, and what makes sense for the frequency and format of sessions.</p>
+          </div>
+        </div>
+        <div class="approach-row">
+          <span class="approach-num mono">05</span>
+          <div>
+            <h3>Ongoing sessions</h3>
+            <p>Sessions are 50 minutes, in person at Dr. Rosen's Denver office or by telehealth anywhere she is
+              licensed. Many people start weekly, with frequency changing over time as needs and goals shift.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1041,6 +1105,7 @@
             <a href="/lindsay/services/">Services</a>
             <a href="/lindsay/services/adolescent-therapy/">Adolescent Therapy</a>
             <a href="/lindsay/services/individual-therapy/">Individual Adult Therapy</a>
+            <a href="/lindsay/services/new-and-expecting-parents/">New &amp; Expecting Parents</a>
             <a href="/lindsay/services/consultation/">Consultation</a>
             <a href="/lindsay/services/psychological-assessment/">Psychological Assessment</a>
             <a href="/lindsay/approach/">Approach</a>
@@ -1240,6 +1305,24 @@
     entries.forEach(function(e){ if(e.isIntersecting){ v.classList.remove('is-apart'); io.disconnect(); } });
   }, {threshold: 0.45});
   io.observe(v);
+})();
+(function(){
+  var accs = document.querySelectorAll('[data-accordion]');
+  Array.prototype.forEach.call(accs, function(acc){
+    var panels = acc.querySelectorAll('.pa-panel');
+    function open(p){
+      Array.prototype.forEach.call(panels, function(x){
+        var on = (x === p);
+        x.classList.toggle('is-open', on);
+        x.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+    }
+    Array.prototype.forEach.call(panels, function(p){
+      p.addEventListener('mouseenter', function(){ open(p); });
+      p.addEventListener('focus', function(){ open(p); });
+      p.addEventListener('click', function(){ open(p); });
+    });
+  });
 })();
 </script>
 
