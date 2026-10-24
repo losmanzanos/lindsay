@@ -6,6 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Therapy for teens ages 13-17 with Dr. Lindsay Rosen, a licensed clinical psychologist in Denver, CO, in person and by telehealth.">
 <link rel="canonical" href="/lindsay/services/adolescent-therapy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rosen Psychology">
+<meta property="og:title" content="Adolescent Therapy in Denver, CO | Rosen Psychology">
+<meta property="og:description" content="Therapy for teens ages 13-17 with Dr. Lindsay Rosen, a licensed clinical psychologist in Denver, CO, in person and by telehealth.">
+<meta property="og:url" content="/lindsay/services/adolescent-therapy/">
+<meta property="og:image" content="/lindsay/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/lindsay/images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/lindsay/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/lindsay/images/favicon-16.png">
@@ -341,6 +348,7 @@
   .inline-link:hover{border-bottom-color:var(--mustard);}
   .quote-venn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2.5rem,6vw,6rem);align-items:center;}
   .quote-venn blockquote{font-size:clamp(1.55rem,2.5vw,2.25rem);max-width:21ch;}
+  .quote-wide blockquote{font-size:clamp(1.45rem,2.3vw,2.05rem);max-width:30ch;}
   .venn-ink .venn-l,.venn-ink .venn-r,.venn-ink .venn-c{color:#F4F0E8;}
   @media (max-width:880px){ .quote-venn-grid{grid-template-columns:1fr;} .venn-ink{max-width:520px;} }
 
@@ -639,6 +647,7 @@
   .ph-full{position:relative;display:flex;align-items:flex-end;overflow:hidden;
     height:clamp(460px, 64vh, 640px);border-bottom:1px solid var(--line);}
   .ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media (max-width:880px){ .ph-bg[data-mobile-pos]{object-position:var(--mpos) !important;} }
   .ph-full::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:linear-gradient(90deg, rgba(24,32,38,0.80) 0%, rgba(24,32,38,0.58) 36%, rgba(24,32,38,0.10) 70%, rgba(24,32,38,0) 100%),
                linear-gradient(0deg, rgba(24,32,38,0.40) 0%, rgba(24,32,38,0) 45%);}
@@ -894,8 +903,8 @@
     .footer-legal .rights{white-space:normal;}
     .footer-legal-links{white-space:normal;}
     .footer-bottom{align-items:flex-start;text-align:left;}
-    .transcript-row{flex-wrap:wrap;gap:0.2rem 1.5rem;}
-    .transcript-row .credential{white-space:normal;}
+    .transcript-row{flex-direction:column;align-items:flex-start;gap:0.15rem;}
+    .transcript-row .credential{white-space:normal;text-align:left;}
   }
 
   /* -------------------- credential accordion (About page) -------------------- */
@@ -990,7 +999,7 @@
   .headshot-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:52% center;display:block;}
   .about-intro{align-items:center;}
   .about-intro .headshot-wrap{margin-bottom:0;}
-  .about-intro .headshot-wrap img{aspect-ratio:1/1;object-position:50% 30%;}
+  .about-intro .headshot-wrap img{aspect-ratio:4/5;object-position:50% 30%;}
   .about-intro .about-body h1{margin-top:1rem;}
   .about-intro .about-body p.eyebrow{margin-top:0;color:var(--oak);max-width:none;}
   @media (max-width:880px){ .about-intro .headshot-wrap img{aspect-ratio:4/5;} }
@@ -1092,7 +1101,7 @@
 </header>
 <main id="top">
   <section class="ph-full">
-    <img class="ph-bg" src="/lindsay/images/hero-adolescent.jpg" alt="A small basketball hoop on the office door, next to Dr. Rosen's painted bookshelf" style="object-position:center 35%;" fetchpriority="high">
+    <img class="ph-bg" src="/lindsay/images/hero-adolescent.jpg" alt="A small basketball hoop on the office door, next to Dr. Rosen's painted bookshelf" style="object-position:center 35%;--mpos:52% 50%;" data-mobile-pos="" fetchpriority="high">
     <div class="wrap ph-full-inner">
       <div class="ph-copy">
         <a class="back-link" href="/lindsay/services/">&larr; All services</a>
@@ -1100,8 +1109,7 @@
       <h1 style="font-size:clamp(2.4rem,4.8vw,3.6rem);max-width:19ch;margin-top:1rem;">Adolescent therapy</h1>
       <p class="hero-sub" style="margin-top:1.1rem;max-width:58ch;">Adolescence is a time of enormous growth and change,
         often unfolding amid constant comparison, social pressure, and increasing expectations. Having a trusted adult who
-        isn't a parent, teacher, or friend can make a meaningful difference. Dr. Rosen offers teens a relationship where
-        they can speak openly, better understand themselves, and navigate the challenges of growing up with greater
+        isn't a parent, teacher, or friend can make a meaningful difference. I offer teens a relationship where they can speak openly, better understand themselves, and navigate the challenges of growing up with greater
         confidence and independence.</p>
       <div class="hero-actions" style="margin-top:1.6rem;">
         <a class="btn btn-primary" href="/lindsay/contact/">Schedule a free consultation</a>
@@ -1123,7 +1131,7 @@
           everything looks fine from the outside, but underneath they're struggling with self-doubt and pressure.</p>
         <p>Sometimes teens don't know exactly why they're struggling, and figuring that out can be where therapy
           begins.</p>
-        <p>Dr. Rosen works with teens experiencing anxiety, depression, and challenges related to:</p>
+        <p>I work with teens experiencing anxiety, depression, and challenges related to:</p>
         <ul class="check-list">
           <li>School stress, perfectionism, and procrastination</li>
           <li>Friendships, dating, and social pressure</li>
@@ -1138,15 +1146,14 @@
   <section class="on-paper band-tight">
     <div class="wrap about-grid">
       <div>
-        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">Dr. Rosen's approach</h2>
+        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);">My approach</h2>
       </div>
       <div class="about-body">
-        <p>Dr. Rosen begins by getting to know the teen beyond whatever brought them to therapy: their personality,
-          interests, relationships, sense of humor, and what matters to them. She prioritizes building genuine trust,
+        <p>I begin by getting to know the teen beyond whatever brought them to therapy: their personality,
+          interests, relationships, sense of humor, and what matters to them. I prioritize building genuine trust,
           making room for everyday conversation and humor alongside more difficult experiences.</p>
-        <p>As the relationship develops, Dr. Rosen helps teens understand their emotions, recognize patterns, and make
-          sense of why certain situations affect them the way they do. She combines this insight-oriented approach with
-          evidence-based strategies, drawing on cognitive behavioral therapy (CBT), mindfulness, and practical skills to
+        <p>As the relationship develops, I help teens understand their emotions, recognize patterns, and make
+          sense of why certain situations affect them the way they do. I combine this insight-oriented approach with <a class="inline-link" href="/lindsay/about/#evidence">evidence-based strategies</a>, drawing on cognitive behavioral therapy (CBT), mindfulness, and practical skills to
           help teens manage emotions and navigate challenges more effectively.</p>
       </div>
     </div>
@@ -1161,8 +1168,7 @@
         <p>Privacy gives teens the freedom to talk honestly about the hard, uncomfortable, and personal parts of their
           lives. It also creates space to develop their own voice, think critically through problems, and build
           confidence in their ability to make safe, informed decisions.</p>
-        <p>For parents, respecting that privacy also means trusting the therapeutic process. Dr. Rosen works with teens
-          and parents from the outset to establish clear expectations around confidentiality, communication, and parent
+        <p>For parents, respecting that privacy also means trusting the therapeutic process. I work with teens and parents from the outset to establish clear expectations around confidentiality, communication, and parent
           involvement, tailored to the teen's age and family circumstances.</p>
       </div>
     </div>

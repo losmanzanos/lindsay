@@ -6,6 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Reach Dr. Lindsay Rosen's Denver, CO practice by phone, email, or the contact form to schedule a free consultation.">
 <link rel="canonical" href="/lindsay/contact/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rosen Psychology">
+<meta property="og:title" content="Contact | Rosen Psychology">
+<meta property="og:description" content="Reach Dr. Lindsay Rosen's Denver, CO practice by phone, email, or the contact form to schedule a free consultation.">
+<meta property="og:url" content="/lindsay/contact/">
+<meta property="og:image" content="/lindsay/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/lindsay/images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/lindsay/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/lindsay/images/favicon-16.png">
@@ -341,6 +348,7 @@
   .inline-link:hover{border-bottom-color:var(--mustard);}
   .quote-venn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2.5rem,6vw,6rem);align-items:center;}
   .quote-venn blockquote{font-size:clamp(1.55rem,2.5vw,2.25rem);max-width:21ch;}
+  .quote-wide blockquote{font-size:clamp(1.45rem,2.3vw,2.05rem);max-width:30ch;}
   .venn-ink .venn-l,.venn-ink .venn-r,.venn-ink .venn-c{color:#F4F0E8;}
   @media (max-width:880px){ .quote-venn-grid{grid-template-columns:1fr;} .venn-ink{max-width:520px;} }
 
@@ -639,6 +647,7 @@
   .ph-full{position:relative;display:flex;align-items:flex-end;overflow:hidden;
     height:clamp(460px, 64vh, 640px);border-bottom:1px solid var(--line);}
   .ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media (max-width:880px){ .ph-bg[data-mobile-pos]{object-position:var(--mpos) !important;} }
   .ph-full::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:linear-gradient(90deg, rgba(24,32,38,0.80) 0%, rgba(24,32,38,0.58) 36%, rgba(24,32,38,0.10) 70%, rgba(24,32,38,0) 100%),
                linear-gradient(0deg, rgba(24,32,38,0.40) 0%, rgba(24,32,38,0) 45%);}
@@ -894,8 +903,8 @@
     .footer-legal .rights{white-space:normal;}
     .footer-legal-links{white-space:normal;}
     .footer-bottom{align-items:flex-start;text-align:left;}
-    .transcript-row{flex-wrap:wrap;gap:0.2rem 1.5rem;}
-    .transcript-row .credential{white-space:normal;}
+    .transcript-row{flex-direction:column;align-items:flex-start;gap:0.15rem;}
+    .transcript-row .credential{white-space:normal;text-align:left;}
   }
 
   /* -------------------- credential accordion (About page) -------------------- */
@@ -990,7 +999,7 @@
   .headshot-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:52% center;display:block;}
   .about-intro{align-items:center;}
   .about-intro .headshot-wrap{margin-bottom:0;}
-  .about-intro .headshot-wrap img{aspect-ratio:1/1;object-position:50% 30%;}
+  .about-intro .headshot-wrap img{aspect-ratio:4/5;object-position:50% 30%;}
   .about-intro .about-body h1{margin-top:1rem;}
   .about-intro .about-body p.eyebrow{margin-top:0;color:var(--oak);max-width:none;}
   @media (max-width:880px){ .about-intro .headshot-wrap img{aspect-ratio:4/5;} }
@@ -1134,8 +1143,7 @@
           <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off">
         </div>
         <p class="form-note">This form isn't a secure or HIPAA-compliant channel, so please don't include
-          health information, diagnoses, or other confidential details here. We'll set up a secure way to
-          share anything clinical once we're in touch. If this is a mental health emergency, call or text
+          health information, diagnoses, or other confidential details here. I'll set up a secure way to share anything clinical once we're in touch. If this is a mental health emergency, call or text
           988, or call 911.</p>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Send message</button>
@@ -1145,7 +1153,7 @@
         <p class="final-cta-note">Prefer to reach out directly? <a href="mailto:lindsay@rosenpsych.com">lindsay@rosenpsych.com</a>
           or <a href="tel:+17202579204">720-257-9204</a>.</p>
         <p class="final-cta-note" style="margin-top:0.8rem;">In person at 1557 N Ogden Street, Suite 11,
-          Denver, CO 80218, or by telehealth anywhere Dr. Rosen is licensed:
+          Denver, CO 80218, or by telehealth anywhere I'm licensed:
           <a href="/lindsay/#top">check your state</a>.</p>
       </div>
     </div>

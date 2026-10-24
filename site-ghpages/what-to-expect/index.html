@@ -6,6 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="How therapy with Dr. Lindsay Rosen begins, for adults and teens: the free consultation call, first sessions, fees, insurance, telehealth by state, and common questions.">
 <link rel="canonical" href="/lindsay/what-to-expect/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rosen Psychology">
+<meta property="og:title" content="What to Expect | Rosen Psychology">
+<meta property="og:description" content="How therapy with Dr. Lindsay Rosen begins, for adults and teens: the free consultation call, first sessions, fees, insurance, telehealth by state, and common questions.">
+<meta property="og:url" content="/lindsay/what-to-expect/">
+<meta property="og:image" content="/lindsay/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/lindsay/images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/lindsay/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/lindsay/images/favicon-16.png">
@@ -341,6 +348,7 @@
   .inline-link:hover{border-bottom-color:var(--mustard);}
   .quote-venn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2.5rem,6vw,6rem);align-items:center;}
   .quote-venn blockquote{font-size:clamp(1.55rem,2.5vw,2.25rem);max-width:21ch;}
+  .quote-wide blockquote{font-size:clamp(1.45rem,2.3vw,2.05rem);max-width:30ch;}
   .venn-ink .venn-l,.venn-ink .venn-r,.venn-ink .venn-c{color:#F4F0E8;}
   @media (max-width:880px){ .quote-venn-grid{grid-template-columns:1fr;} .venn-ink{max-width:520px;} }
 
@@ -639,6 +647,7 @@
   .ph-full{position:relative;display:flex;align-items:flex-end;overflow:hidden;
     height:clamp(460px, 64vh, 640px);border-bottom:1px solid var(--line);}
   .ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media (max-width:880px){ .ph-bg[data-mobile-pos]{object-position:var(--mpos) !important;} }
   .ph-full::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:linear-gradient(90deg, rgba(24,32,38,0.80) 0%, rgba(24,32,38,0.58) 36%, rgba(24,32,38,0.10) 70%, rgba(24,32,38,0) 100%),
                linear-gradient(0deg, rgba(24,32,38,0.40) 0%, rgba(24,32,38,0) 45%);}
@@ -894,8 +903,8 @@
     .footer-legal .rights{white-space:normal;}
     .footer-legal-links{white-space:normal;}
     .footer-bottom{align-items:flex-start;text-align:left;}
-    .transcript-row{flex-wrap:wrap;gap:0.2rem 1.5rem;}
-    .transcript-row .credential{white-space:normal;}
+    .transcript-row{flex-direction:column;align-items:flex-start;gap:0.15rem;}
+    .transcript-row .credential{white-space:normal;text-align:left;}
   }
 
   /* -------------------- credential accordion (About page) -------------------- */
@@ -990,7 +999,7 @@
   .headshot-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:52% center;display:block;}
   .about-intro{align-items:center;}
   .about-intro .headshot-wrap{margin-bottom:0;}
-  .about-intro .headshot-wrap img{aspect-ratio:1/1;object-position:50% 30%;}
+  .about-intro .headshot-wrap img{aspect-ratio:4/5;object-position:50% 30%;}
   .about-intro .about-body h1{margin-top:1rem;}
   .about-intro .about-body p.eyebrow{margin-top:0;color:var(--oak);max-width:none;}
   @media (max-width:880px){ .about-intro .headshot-wrap img{aspect-ratio:4/5;} }
@@ -1101,8 +1110,7 @@
       <div class="ph-copy">
       <p class="eyebrow">Therapy &middot; Adults &amp; Teens</p>
       <h1 style="font-size:clamp(2.1rem,4.2vw,3.2rem);max-width:18ch;margin-top:1rem;">What to expect when you start therapy.</h1>
-      <p class="hero-sub" style="margin-top:1.1rem;max-width:54ch;">How therapy with Dr. Rosen begins, from the first phone
-        call to regular sessions. It's essentially one process for adults and teens. The main difference is how parents
+      <p class="hero-sub" style="margin-top:1.1rem;max-width:54ch;">How therapy begins, from the first phone call to regular sessions. It's essentially one process for adults and teens. The main difference is how parents
         are involved at the start.</p>
       <div class="hero-actions" style="margin-top:1.6rem;">
         <a class="btn btn-primary" href="/lindsay/contact/">Schedule a free consultation</a>
@@ -1129,21 +1137,21 @@
           <span class="approach-num mono">01</span>
           <div>
             <h3>Let's talk</h3>
-            <div class="approach-body"><p>Dr. Rosen offers a free 15-minute consultation phone call to learn about your interest in services. This is a no-pressure conversation about what brings you in, whether it feels like a good fit, and any questions you have. Nothing to prepare beforehand.</p></div>
+            <div class="approach-body"><p>I offer a free 15-minute consultation phone call to learn about your interest in services. This is a no-pressure conversation about what brings you in, whether it feels like a good fit, and any questions you have. Nothing to prepare beforehand.</p></div>
           </div>
         </div>
         <div class="approach-row">
           <span class="approach-num mono">02</span>
           <div>
             <h3><span data-v="adult">Getting to know you</span><span class="who-or"> / </span><span data-v="teen">Getting to know your teen</span></h3>
-            <div class="approach-body"><div class="who-v" data-v="adult"><span class="who-label mono">Adults</span><p>The first few sessions focus on understanding your concerns, personal history, relationships, and what you hope to gain from therapy. You'll also have a chance to get to know Dr. Rosen and her approach.</p></div><div class="who-v" data-v="teen"><span class="who-label mono">Teens</span><p>Dr. Rosen typically meets with parents first to understand their concerns, family history, and goals. She then spends 2&ndash;3 individual sessions getting to know the teen, hearing their perspective, and building trust.</p></div></div>
+            <div class="approach-body"><div class="who-v" data-v="adult"><span class="who-label mono">Adults</span><p>The first few sessions focus on understanding your concerns, personal history, relationships, and what you hope to gain from therapy. You'll also have a chance to get to know me and my approach.</p></div><div class="who-v" data-v="teen"><span class="who-label mono">Teens</span><p>I typically meet with parents first to understand their concerns, family history, and goals. I then spend 2&ndash;3 individual sessions getting to know the teen, hearing their perspective, and building trust.</p></div></div>
           </div>
         </div>
         <div class="approach-row">
           <span class="approach-num mono">03</span>
           <div>
             <h3>Finding a direction</h3>
-            <div class="approach-body"><div class="who-v" data-v="adult"><span class="who-label mono">Adults</span><p>After these initial sessions, Dr. Rosen will share what she's noticing and invite your perspective on what feels most important to work on. Together, you'll agree on goals, how to approach them, and what makes sense for the frequency and format of sessions.</p></div><div class="who-v" data-v="teen"><span class="who-label mono">Teens</span><p>Dr. Rosen reconnects with parents to discuss initial impressions, treatment goals, and recommendations. Together, everyone establishes clear expectations around confidentiality, communication, and parent involvement.</p></div></div>
+            <div class="approach-body"><div class="who-v" data-v="adult"><span class="who-label mono">Adults</span><p>After these initial sessions, I'll share what I'm noticing and invite your perspective on what feels most important to work on. Together, you'll agree on goals, how to approach them, and what makes sense for the frequency and format of sessions.</p></div><div class="who-v" data-v="teen"><span class="who-label mono">Teens</span><p>I reconnect with parents to discuss initial impressions, treatment goals, and recommendations. Together, everyone establishes clear expectations around confidentiality, communication, and parent involvement.</p></div></div>
           </div>
         </div>
         <div class="approach-row">
@@ -1170,15 +1178,14 @@
         </div>
         <div class="detail">
           <h3>Insurance</h3>
-          <p>Dr. Rosen is in-network with Lyra Health. For other insurance plans, she is an out-of-network provider and
+          <p>I'm in-network with Lyra Health. For other insurance plans, I'm an out-of-network provider and
             can provide a monthly superbill for possible reimbursement.</p>
           <p class="detail-small">If you plan to use out-of-network benefits, check with your insurance company about
             your deductible, coverage, and reimbursement rate (CPT code 90834).</p>
         </div>
         <div class="detail">
           <h3>Where sessions take place</h3>
-          <p>In person at 1557 N Ogden Street, Suite 11, Denver, or by telehealth in Colorado and other states where
-            Dr. Rosen is authorized to practice.</p>
+          <p>In person at 1557 N Ogden Street, Suite 11, Denver, or by telehealth in Colorado and other states where I'm authorized to practice.</p>
           <div class="detail-check">
             <div class="state-check">
               <span class="state-check-inner">
@@ -1196,16 +1203,16 @@
   <section class="on-paper band-tight" id="faq">
     <div class="wrap about-grid">
       <div>
-        <p class="eyebrow">FAQ</p>
+        <p class="eyebrow">FAQs</p>
         <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:14ch;">A few more questions</h2>
       </div>
       <div class="faq-acc">
         <details>
-          <summary>What is the difference between a psychologist, a psychiatrist, and a therapist?</summary>
+          <summary>What is the difference between a psychiatrist, a therapist, and a psychologist?</summary>
           <div class="faq-a">
+            <p>A psychiatrist is a medical doctor who primarily evaluates, prescribes, and manages psychiatric medication. For clients who may benefit from medication in addition to therapy, I'm happy to collaborate with a psychiatrist or other prescribing provider.</p>
             <p>&ldquo;Therapist&rdquo; is a broad term that can refer to mental health professionals with a variety of educational backgrounds and licenses, including social workers and professional counselors.</p>
-            <p>A psychologist has completed doctoral-level training in psychology, including psychotherapy, psychological assessment, diagnosis, and research, plus years of supervised clinical training before becoming independently licensed. Dr. Rosen is a licensed clinical psychologist with a PsyD in Clinical Psychology.</p>
-            <p>A psychiatrist is a medical doctor who primarily evaluates, prescribes, and manages psychiatric medication. For clients who may benefit from medication in addition to therapy, Dr. Rosen is happy to collaborate with a psychiatrist or other prescribing provider.</p>
+            <p>A psychologist has completed doctoral-level training in psychology, including psychotherapy, psychological assessment, diagnosis, and research, plus years of supervised clinical training before becoming independently licensed. I'm a licensed clinical psychologist with a PsyD in Clinical Psychology.</p>
           </div>
         </details>
         <details>
@@ -1242,10 +1249,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the difference between a psychologist, a psychiatrist, and a therapist?",
+      "name": "What is the difference between a psychiatrist, a therapist, and a psychologist?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "“Therapist” is a broad term that can refer to mental health professionals with a variety of educational backgrounds and licenses, including social workers and professional counselors. A psychologist has completed doctoral-level training in psychology, including psychotherapy, psychological assessment, diagnosis, and research, plus years of supervised clinical training before becoming independently licensed. Dr. Rosen is a licensed clinical psychologist with a PsyD in Clinical Psychology. A psychiatrist is a medical doctor who primarily evaluates, prescribes, and manages psychiatric medication. For clients who may benefit from medication in addition to therapy, Dr. Rosen is happy to collaborate with a psychiatrist or other prescribing provider."
+        "text": "A psychiatrist is a medical doctor who primarily evaluates, prescribes, and manages psychiatric medication. For clients who may benefit from medication in addition to therapy, I'm happy to collaborate with a psychiatrist or other prescribing provider. “Therapist” is a broad term that can refer to mental health professionals with a variety of educational backgrounds and licenses, including social workers and professional counselors. A psychologist has completed doctoral-level training in psychology, including psychotherapy, psychological assessment, diagnosis, and research, plus years of supervised clinical training before becoming independently licensed. I'm a licensed clinical psychologist with a PsyD in Clinical Psychology."
       }
     },
     {

@@ -6,6 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Meet Dr. Lindsay Rosen, PsyD, a licensed clinical psychologist in Denver, CO: her approach to therapy, the evidence-based methods she draws on, and her clinical training.">
 <link rel="canonical" href="/lindsay/about/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rosen Psychology">
+<meta property="og:title" content="About Dr. Rosen | Rosen Psychology">
+<meta property="og:description" content="Meet Dr. Lindsay Rosen, PsyD, a licensed clinical psychologist in Denver, CO: her approach to therapy, the evidence-based methods she draws on, and her clinical training.">
+<meta property="og:url" content="/lindsay/about/">
+<meta property="og:image" content="/lindsay/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/lindsay/images/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/lindsay/images/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/lindsay/images/favicon-16.png">
@@ -341,6 +348,7 @@
   .inline-link:hover{border-bottom-color:var(--mustard);}
   .quote-venn-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(2.5rem,6vw,6rem);align-items:center;}
   .quote-venn blockquote{font-size:clamp(1.55rem,2.5vw,2.25rem);max-width:21ch;}
+  .quote-wide blockquote{font-size:clamp(1.45rem,2.3vw,2.05rem);max-width:30ch;}
   .venn-ink .venn-l,.venn-ink .venn-r,.venn-ink .venn-c{color:#F4F0E8;}
   @media (max-width:880px){ .quote-venn-grid{grid-template-columns:1fr;} .venn-ink{max-width:520px;} }
 
@@ -639,6 +647,7 @@
   .ph-full{position:relative;display:flex;align-items:flex-end;overflow:hidden;
     height:clamp(460px, 64vh, 640px);border-bottom:1px solid var(--line);}
   .ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  @media (max-width:880px){ .ph-bg[data-mobile-pos]{object-position:var(--mpos) !important;} }
   .ph-full::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:linear-gradient(90deg, rgba(24,32,38,0.80) 0%, rgba(24,32,38,0.58) 36%, rgba(24,32,38,0.10) 70%, rgba(24,32,38,0) 100%),
                linear-gradient(0deg, rgba(24,32,38,0.40) 0%, rgba(24,32,38,0) 45%);}
@@ -894,8 +903,8 @@
     .footer-legal .rights{white-space:normal;}
     .footer-legal-links{white-space:normal;}
     .footer-bottom{align-items:flex-start;text-align:left;}
-    .transcript-row{flex-wrap:wrap;gap:0.2rem 1.5rem;}
-    .transcript-row .credential{white-space:normal;}
+    .transcript-row{flex-direction:column;align-items:flex-start;gap:0.15rem;}
+    .transcript-row .credential{white-space:normal;text-align:left;}
   }
 
   /* -------------------- credential accordion (About page) -------------------- */
@@ -990,7 +999,7 @@
   .headshot-wrap img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:52% center;display:block;}
   .about-intro{align-items:center;}
   .about-intro .headshot-wrap{margin-bottom:0;}
-  .about-intro .headshot-wrap img{aspect-ratio:1/1;object-position:50% 30%;}
+  .about-intro .headshot-wrap img{aspect-ratio:4/5;object-position:50% 30%;}
   .about-intro .about-body h1{margin-top:1rem;}
   .about-intro .about-body p.eyebrow{margin-top:0;color:var(--oak);max-width:none;}
   @media (max-width:880px){ .about-intro .headshot-wrap img{aspect-ratio:4/5;} }
@@ -1105,43 +1114,64 @@
         <img src="/lindsay/images/lindsay-about.jpg" alt="Dr. Lindsay Rosen laughing in her Denver office, with her framed diplomas on the wall behind her" fetchpriority="high">
       </div>
       <div class="about-body">
-        <p class="eyebrow">About Dr. Rosen</p>
+        <p class="eyebrow">A little about me</p>
         <h1 style="font-size:clamp(1.9rem,3.2vw,2.6rem);">Dr. Lindsay Rosen, PsyD</h1>
-        <p>Dr. Lindsay Rosen is a licensed clinical psychologist who provides psychotherapy to adolescents
-          and adults and comprehensive psychological assessment across the lifespan. Her training spans
-          schools, hospitals, community mental health centers, and private practice. That range gives her a
-          nuanced read on the many factors that shape how a person thinks, feels, relates, and moves through
-          the world.</p>
-        <p>She has particular expertise in the times when people are figuring out who they are and how they
-          want to live, from teenagers building identity and independence to adults adjusting to new
-          relationships, roles, or a changing sense of self.</p>
-        <p>In session, she helps clients understand the patterns underneath their day-to-day struggles and
-          build practical skills, inside a warm, straightforward relationship. The aim is real clarity rather
-          than quick fixes.</p>
+        <p>My path to becoming a psychologist started in a research lab at Harvard University, using psychological
+          assessments and brain imaging to study how kids think, learn, and connect with others. While I loved the
+          science, my favorite part of the work was getting to know the people behind the research and learning how
+          psychological assessment could offer a deeper understanding of a person.</p>
+        <p>This experience led me to study developmental psychology at Tufts University where I became fascinated by
+          how our earliest relationships and experiences influence the way we understand ourselves and connect with
+          others later in life. I brought this perspective to Denver, where I earned my doctorate in clinical
+          psychology and worked with people of all ages in homes, schools, clinics, and hospitals. These experiences
+          shaped how I understand people's current struggles in the context of their histories, relationships, and
+          life experiences.</p>
+        <p>Psychological assessment also remained a central part of my training. I became especially interested in
+          therapeutic assessment, an approach that combines standardized testing with the collaborative, relational
+          aspects of therapy. I loved the idea that an evaluation could do more than identify a diagnosis; it could
+          help people better understand themselves and begin making meaningful changes.</p>
+        <p>What has remained most consistent throughout my career is how much I genuinely enjoy getting to know
+          people. I love the intellectual challenge of understanding why people think, feel, and behave as they do,
+          but it's the relationships that make this work so meaningful. I'm continually struck by people's resilience
+          and complexity, and grateful for the trust they place in me.</p>
       </div>
     </div>
   </section>
 
-  <section class="on-paper band-tight" id="approach" style="background:var(--paper-2);">
+  <section class="on-paper band-tight" id="training" style="background:var(--paper-2);">
     <div class="wrap about-grid">
       <div>
-        <p class="eyebrow">Dr. Rosen's approach</p>
+        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:14ch;">Education and clinical training</h2>
+      </div>
+      <div class="transcript transcript-full">
+        <div class="transcript-row"><span class="school">University of Denver</span><span class="credential">PsyD, Clinical Psychology (APA-Accredited)</span></div>
+        <div class="transcript-row"><span class="school">Tufts University</span><span class="credential">M.A., Applied Child Development and Human Study</span></div>
+        <div class="transcript-row"><span class="school">University of Miami</span><span class="credential">B.A., Psychology, Phi Beta Kappa, Magna Cum Laude</span></div>
+        <div class="transcript-row"><span class="school">Birch Psychology, Denver</span><span class="credential">Postdoctoral Fellowship</span></div>
+        <div class="transcript-row"><span class="school">Community Reach Center, Denver</span><span class="credential">Clinical Psychology Internship</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-paper band-tight" id="approach">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">My approach</p>
         <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:15ch;">Thoughtful, evidence-based, and genuinely human</h2>
       </div>
       <div class="about-body">
-        <p class="lead-p">Dr. Rosen's approach combines an understanding of the deeper emotional and relational patterns
-          that shape people's lives with practical strategies for making meaningful changes in the present. Her
-          style is warm, engaged, and direct, with room for curiosity, humor, and honest conversations.</p>
+        <p class="lead-p">My approach combines an understanding of the deeper emotional and relational patterns
+          that shape people's lives with practical strategies for making meaningful changes in the present. My style is warm, engaged, and direct, with room for curiosity, humor, and honest conversations.</p>
       </div>
     </div>
   </section>
 
-  <section class="on-paper band" id="principles">
+  <section class="on-paper band" id="principles" style="background:var(--paper-2);">
     <div class="wrap">
       <div class="section-head">
         <div>
           <p class="eyebrow">Guiding principles</p>
-          <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);">The values that guide Dr. Rosen's work</h2>
+          <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);">The values that guide my work</h2>
         </div>
       </div>
       <div class="approach-list">
@@ -1151,8 +1181,7 @@
             <h3>The relationship comes first</h3>
             <p>Research consistently shows that the therapeutic relationship is one of the strongest predictors of
               successful therapy. After all, it's hard to be vulnerable or take an honest look at yourself if you
-              don't feel comfortable with the person sitting across from you. Dr. Rosen prioritizes building
-              relationships where clients feel understood and at ease being themselves.</p>
+              don't feel comfortable with the person sitting across from you. I prioritize building relationships where clients feel understood and at ease being themselves.</p>
           </div>
         </div>
         <div class="approach-row">
@@ -1160,9 +1189,7 @@
           <div>
             <h3>Education &amp; evidence</h3>
             <p>Good therapy draws on both scientific research and a thoughtful understanding of the individual.
-              Dr. Rosen combines <a class="inline-link" href="#evidence">evidence-based approaches</a> with
-              psychoeducation, making the science behind our thoughts, emotions, and behaviors accessible and
-              relevant to everyday life. She believes understanding the science behind our experiences can offer
+              I combine <a class="inline-link" href="#evidence">evidence-based approaches</a> with psychoeducation, making the science behind how we think, feel, and behave accessible and relevant to everyday life. I believe understanding the science behind our experiences can offer
               valuable insight, without requiring a degree in psychology to make sense of it.</p>
           </div>
         </div>
@@ -1170,7 +1197,7 @@
           <span class="approach-num mono">03</span>
           <div>
             <h3>Humor has a place here</h3>
-            <p>Dr. Rosen believes wit, laughter, and the occasional dose of sarcasm have their place in therapy.
+            <p>I believe wit, laughter, and the occasional dose of sarcasm have their place in therapy.
               Humor can offer a fresh perspective and bring levity to difficult conversations. Therapy can be
               serious work without feeling serious every minute.</p>
           </div>
@@ -1179,21 +1206,18 @@
           <span class="approach-num mono">04</span>
           <div>
             <h3>Every client makes sense</h3>
-            <div class="approach-body">
-              <p>Even the patterns people find most frustrating about themselves developed for a reason, often as
-                ways of adapting to their experiences and relationships.</p>
-              <p>What once served a purpose may no longer be helpful. Understanding why these patterns developed and
-                persist can help clients approach change with greater compassion and intention.</p>
-            </div>
+            <p>Even the patterns people find most frustrating about themselves developed for a reason, often as
+              ways of adapting to their experiences and relationships. What once served a purpose may no longer be
+              helpful. Understanding why these patterns developed and persist can help clients approach change with
+              greater compassion and intention.</p>
           </div>
         </div>
         <div class="approach-row">
           <span class="approach-num mono">05</span>
           <div>
             <h3>Humility</h3>
-            <p>Dr. Rosen welcomes conversations about how culture, race, ethnicity, religion, gender, sexual
-              orientation, and other aspects of identity shape clients' experiences and perspectives. She approaches
-              these conversations with kindness, curiosity, and a commitment to listening without making
+            <p>I welcome conversations about how culture, race, ethnicity, religion, gender, sexual
+              orientation, and other aspects of identity shape clients' experiences and perspectives. I approach these conversations with kindness, curiosity, and a commitment to listening without making
               assumptions.</p>
           </div>
         </div>
@@ -1209,11 +1233,11 @@
     </div>
   </section>
 
-  <section class="on-paper band-tight" id="evidence" style="background:var(--paper-2);">
+  <section class="on-paper band-tight" id="evidence">
     <div class="wrap about-grid">
       <div>
-        <p class="eyebrow">The science behind the work</p>
-        <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:16ch;">An integrative approach to evidence-based practice</h2>
+        <p class="eyebrow">An integrative approach</p>
+        <h2 style="margin-top:1rem;font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:16ch;">The evidence-based approaches I draw on most</h2>
       </div>
       <div class="cred-groups modality-list">
         <details>
@@ -1244,45 +1268,6 @@
     </div>
   </section>
 
-  <section class="on-paper band-tight" id="training">
-    <div class="wrap about-grid">
-      <div>
-        <h2 style="font-size:clamp(1.7rem,2.8vw,2.3rem);max-width:14ch;">Educational and clinical training</h2>
-      </div>
-      <div class="cred-groups">
-        <details open>
-          <summary>Education</summary>
-          <div class="cred-list">
-            <div>PsyD, Clinical Psychology (APA-Accredited) &middot; University of Denver, Denver, CO</div>
-            <div>M.A., Applied Child Development and Human Study &middot; Tufts University, Medford, MA</div>
-            <div>B.A., Psychology, Phi Beta Kappa, Magna Cum Laude &middot; University of Miami, Coral Gables, FL</div>
-          </div>
-        </details>
-        <details>
-          <summary>Internship &amp; Postdoctoral Training</summary>
-          <div class="cred-list">
-            <div>Postdoctoral Fellowship &middot; Birch Psychology, Denver, CO</div>
-            <div>Clinical Psychology Internship &middot; Community Reach Center (CRC), Denver, CO</div>
-          </div>
-        </details>
-        <details>
-          <summary>Additional Training</summary>
-          <div class="cred-list">
-            <div>Mental Health Center of Denver &middot; Adult Psychological Assessment, Denver, CO</div>
-            <div>Caring for You and Baby Clinic (CUB Clinic) &middot; University of Denver Graduate School of Professional Psychology, Denver, CO</div>
-            <div>National Jewish Health &middot; Pediatric Behavioral Health Neuropsychology, Denver, CO</div>
-            <div>CRC In-Home Resiliency and Support Services Team, Denver, CO</div>
-            <div>CRC School-Based Therapy Program, Denver, CO</div>
-            <div>NeuroWorks Neuropsychological Assessment Private Practice, Boulder, CO</div>
-            <div>Growing Minds Psychological Assessment Practice, Lexington, MA</div>
-            <div>Boston Medical Center &middot; Developmental and Behavioral Pediatrics, Boston, MA</div>
-            <div>Harvard University &middot; Social Neuroscience and Psychopathology Lab</div>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
   <section class="on-ink band-tight gallery-dark" id="office">
     <div class="wrap">
       <p class="eyebrow">The office</p>
@@ -1305,7 +1290,7 @@
       <div>
         <h2 style="max-width:17ch;">Curious about working together?</h2>
         <p style="color:var(--ink-soft);max-width:42ch;margin-top:1rem;">Whether you're considering assessment or
-          therapy, Dr. Rosen would love to connect, answer questions, and see whether working together feels like a
+          therapy, I'd love to connect, answer questions, and see whether working together feels like a
           good fit.</p>
       </div>
       <a class="btn btn-primary" href="/lindsay/contact/" style="padding:1.05em 1.9em;font-size:0.9rem;">Schedule a consultation</a>
